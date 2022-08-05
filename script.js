@@ -17,13 +17,13 @@ function Nav(){
         mail.href = "#";
         const midDiv = makeElm('div');
           const home = makeElm('a',"","",'Home');
-          home.href = "index.html";
+          home.href = "#";
           const services = makeElm('a',"","",'Services');
-          services.href="services.html";
+          services.href="#";
           const port = makeElm('a',"","","Portfolio");
-          port.href="portfolio.html";
+          port.href="#";
           const book = makeElm('a',"","",'How to book');
-          book.href="booking.html";
+          book.href="#";
 
   out.append(navOutter);
   navOutter.append(nav);
@@ -60,17 +60,22 @@ function EmailForm(){
   const outterDiv = makeElm('div','col1 inputContainer');
     const innerDiv = makeElm('div','innerDiv col inputLeft');
       const form = makeElm('form',"",'EmailForm');
+        // Title of the form
         const header1 = makeElm('h2',"","",'Come Visit Us');
         const div1 = makeElm('div','inputRequired');
+          // Name input
           const div11 = makeElm('div');
             const header11 = makeElm('h5',"","",'Name *');
             const input11  = makeElm('input','input');
+          // Email input
           const div21 = makeElm('div');
             const header21 = makeElm('h5',"","",'Email *');
             const input21 = makeElm('input','input');
+          // Subject input
           const div31 = makeElm('div');
             const header31 = makeElm('h5',"","",'Subject');
             const input31 = makeElm('input','input single','subjectInput');
+          // 
           const div41 = makeElm('div');
             const header41 = makeElm('h5',"","",'Message');
             const input41 = makeElm('textarea','input single','textInput');
