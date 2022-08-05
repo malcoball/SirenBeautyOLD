@@ -10,6 +10,9 @@ $font2 : 'Roboto', sans-serif;
 // The style sheet follows the html flow
 // Global/multiple rules are at the bottom
 #navOutter{
+    position:fixed;
+    width: 100vw;
+    background-color: $col1;
     nav{
     margin: 0 auto;
     justify-content: center;

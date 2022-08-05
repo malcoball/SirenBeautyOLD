@@ -1,3 +1,9 @@
+#navOutter {
+  position: fixed;
+  width: 100vw;
+  background-color: white;
+}
+
 #navOutter nav {
   margin: 0 auto;
   -webkit-box-pack: center;
