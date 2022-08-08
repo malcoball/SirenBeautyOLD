@@ -1,0 +1,56 @@
+@import '_variables';
+
+.ServicesApp{
+section{
+    h3{
+        padding-top: 120px;
+        font-size: 2.3em;
+        text-transform: uppercase;
+        font-family: $font1;
+    }
+    h5{
+        padding-top: 38px;
+        padding-bottom: 134px;
+        font-size: 0.93em;
+        font-weight: 400;
+        font-family: $font2;
+    }
+}
+article{
+    .cardContainer{
+        max-width: 1762px;
+        display: flex;
+        margin: 0 auto 38px auto;
+        .leftDiv{
+            padding:0 12px;
+            h3{
+                padding-top: 140px;
+                font-family: $font1;
+                font-weight: 100;
+                font-size: 1.4em;
+                text-transform: uppercase;
+            }
+            h5{
+                padding-top:32px;
+                font-style: italic;
+                font-family: $font3;
+                font-size: 1.15em;
+            }
+            p{
+                padding-top: 48px;
+                padding-bottom: 128px;
+                font-size: 0.95em;
+                line-height: 1.9em;
+                font-family: $font2;
+            }
+        }
+        .rightDiv{
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .cardDiv{
+            width: 50%;
+        }
+    }
+}
+}

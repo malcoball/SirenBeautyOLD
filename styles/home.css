@@ -1,0 +1,40 @@
+.HomeApp section {
+  padding-bottom: 122px;
+}
+
+.HomeApp section h1 {
+  text-transform: uppercase;
+  font-family: "Playfair Display", serif;
+  font-size: 4.8em;
+  padding: 48px 0 32px 0;
+}
+
+.HomeApp section h5 {
+  padding-bottom: 36px;
+}
+
+.HomeApp section h5:nth-of-type(2) {
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+.HomeApp #midSpacing {
+  height: 80px;
+}
+
+.HomeApp article h5:nth-of-type(1) {
+  padding: 48px 0;
+  margin-bottom: 0;
+}
+
+.HomeApp article h5:nth-of-type(2) {
+  font-size: 0.95em;
+  padding-bottom: 80px;
+  margin-bottom: 0;
+}
+
+.HomeApp #bottomSpacing {
+  height: 80px;
+}
+/*# sourceMappingURL=home.css.map */

@@ -1,3 +1,4 @@
+const DOMTarget = document.querySelector("#app");
 function makeElm(type,className = "",idName = "",textCont = ""){
     const element = document.createElement(type);
     if (className != "") element.className = className;
@@ -9,7 +10,7 @@ function makeElm(type,className = "",idName = "",textCont = ""){
 };
 
 function Nav(){
-  const out = document.querySelector("#app");
+  const navPush = makeElm('div',"",'navPush');
 
   const navOutter = makeElm('div',"",'navOutter');
     const nav = makeElm('nav');
@@ -30,19 +31,19 @@ function Nav(){
         //   book.href="#";
           navLinks(book,"How to book")
 
-  out.append(navOutter);
-  navOutter.append(nav);
-  nav.append(cont);
-  cont.append(mail,midDiv);
-  midDiv.append(home,services,port,book);
+  DOMTarget.append(navOutter,navPush);
+    navOutter.append(nav);
+      nav.append(cont);
+        cont.append(mail,midDiv);
+          midDiv.append(home,services,port,book);
 }
 
 
 function Index(){
-  const out = document.querySelector("#app");
-
   const topSpace = makeElm('div',"",'topSpacing');
-  const section = makeElm('section',"text-primary col1");
+  topSpace.style.backgroundImage = 'url("Images/cardImage.jpg")';
+
+  const section = makeElm('section',"text-primary col1 home");
     const secDiv = makeElm('div',"innerDiv col1");
       const header1 = makeElm('h1',"","",'Welcome to Siren Beauty Nottingham');
       const header2 = makeElm('h5',"","",'<i>Enabling you to feel your best self</i>');
@@ -56,7 +57,7 @@ function Index(){
 
   const botSpace = makeElm('div',"",'bottomSpacing');
 
-  out.append(topSpace,section,midSpace,article,botSpace);
+  DOMTarget.append(topSpace,section,midSpace,article,botSpace);
     section.append(secDiv);
       secDiv.append(header1,header2,header3);
     article.append(artDiv);
@@ -64,16 +65,24 @@ function Index(){
 
 }
 
-function ServiceCard(title,subHead,para,image){
-}
+
+
 function Services(){
-  const article = makeElm('article');
-    const artTitle = makeElm('h1',"","","Our Service Menu");
-    const artText = makeElm('p',"","",'All treatments include a consultation so we can both understand each other in what can be achieved and discuss what is right for you.');
-  
-  const out = document.querySelector("#app");
-    out.append(article);
-      article.append(artTitle,artText);
+  const section = makeElm('section','text-primary col1');
+    const secDiv = makeElm('div','innerDiv col1');
+      const header1 = makeElm('h3',"","",'Our Service Menu');
+      const header2 = makeElm('h5',"","",'All treatments include a consultation so we can both understand each other in what can be achieved and discuss what is right for you. ');
+
+  const cards = makeElm('article','col1');
+  cards.append(ServiceCard("Powder/Ombre Machine Brows","£150 inc top up","Pigment is implanted into the brows using a dusting technique with a machine. This created a soft airy powdery look that can be enjoyed for 18/24 months",null));
+  cards.append(ServiceCard("MICROBLADED BROWS","£150 inc top up","The au natual look” Strokes are strategically placed using a manual tool to mimick the brows natural hairs. Results can be expected to last 12 months",null));
+  cards.append(ServiceCard("COMBINATION BROWS","£150 inc top up","Skin is packed with pigment to enhance Colour for the lips. Perfectly compliments fillers for extra wow factor.",null));
+  cards.append(ServiceCard("LIP BLUSH COMING SOON!","£150 inc top up","Pigment is implanted into the brows using a dusting technique with a machine. This created a soft airy powdery look that can be enjoyed for 18/24 months",null));
+  cards.append(ServiceCard("MICRONEEDLING","£40 or 3 sessions £100","Also known as collagens induction therepy. This treatment results in new fresh glowing skin. Creating tiny controlled injuries in the skin allows the healing process to take form. As this happens the skin is rejuvenated with new skin cells and makes the face appear more youthful. A series of treaments are reccomended for best results.",null));
+
+  DOMTarget.append(section,cards);
+    section.append(secDiv);
+      secDiv.append(header1,header2);
 }
 function EmailForm(){
   const outterDiv = makeElm('div','col1 inputContainer');
@@ -129,9 +138,11 @@ function Footer(){
           const fbLink = makeElm('a',"",'face');
           fbLink.href="https://www.facebook.com/SirenBeautyNottingham";
           fbLink.target = "_blank";
+          fbLink.style.backgroundImage = 'url("Images/facebook.png")';
           const inLink = makeElm('a',"",'inst');
           inLink.href="https://www.instagram.com/sirenbeautynottingham/";
           inLink.target = "_blank";
+          inLink.style.backgroundImage = 'url("Images/instagram.png")';
         const header3 = makeElm('h5',"","",'c2022 by Siren Beauty Nottingham.');
   out.append(footer);
     footer.append(div1);

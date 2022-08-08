@@ -1,5 +1,10 @@
+#navPush {
+  padding-bottom: 97.6px;
+}
+
 #navOutter {
   position: fixed;
+  top: 0;
   width: 100vw;
   background-color: white;
 }
@@ -13,7 +18,7 @@
 }
 
 #navOutter nav #navCont {
-  font-family: "Roboto", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 300;
   font-size: 0.9em;
   border-top: 1px solid black;
@@ -47,46 +52,6 @@
   background-image: url("Images/background.jpg");
   background-position: center;
   background-attachment: fixed;
-}
-
-section {
-  padding-bottom: 122px;
-}
-
-section h1 {
-  text-transform: uppercase;
-  font-family: "Playfair Display", serif;
-  font-size: 4.8em;
-  padding: 48px 0 32px 0;
-}
-
-section h5 {
-  padding-bottom: 36px;
-}
-
-section h5:nth-of-type(2) {
-  font-size: 1em;
-  font-weight: 400;
-  line-height: 1.8;
-}
-
-#midSpacing {
-  height: 80px;
-}
-
-article h5:nth-of-type(1) {
-  padding: 48px 0;
-  margin-bottom: 0;
-}
-
-article h5:nth-of-type(2) {
-  font-size: 0.95em;
-  padding-bottom: 80px;
-  margin-bottom: 0;
-}
-
-#bottomSpacing {
-  height: 80px;
 }
 
 form {
@@ -181,7 +146,7 @@ footer h4 {
 }
 
 footer h5 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 300;
   font-size: 0.8em;
 }
@@ -211,14 +176,6 @@ footer #imageDiv a {
   background-size: cover;
 }
 
-footer #imageDiv #face {
-  background-image: url("./Images/facebook.png");
-}
-
-footer #imageDiv #inst {
-  background-image: url("./Images/instagram.png");
-}
-
 footer h5:nth-of-type(2) {
   padding-bottom: 24px;
 }
@@ -243,4 +200,4 @@ i {
   background-color: white;
   color: black;
 }
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=shared.css.map */

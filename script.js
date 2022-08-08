@@ -12,6 +12,9 @@ function changePage(title){
   document.title = `${title} | Siren Beauty`;
   // Remove the old content
   const root = document.querySelector("#app");
+  // Make sure the app element has a unique tag
+  root.className = title+"App";
+
   while (root.firstChild) {
     root.removeChild(root.firstChild);
   }
@@ -22,6 +25,7 @@ function makePage(title){
   changePage(title);
   Nav();
   switch(title){
+    case "Index":
     case "Home":
       Index();
       EmailForm();
@@ -42,4 +46,4 @@ function makePage(title){
   Footer();
 }
 
-makePage("Home");
+makePage("Services");

@@ -1,0 +1,41 @@
+@import '_variables';
+
+.HomeApp{
+    // Unique stylings for the homepage
+    section{
+        h1{
+            text-transform: uppercase;
+            font-family: $font1;
+            font-size: 4.8em;
+            padding: 48px 0 32px 0;
+        }
+        h5{
+            padding-bottom: 36px;
+        }
+        h5:nth-of-type(2){
+            font-size: 1em;
+            font-weight: 400;
+            line-height: 1.8;
+        }
+        padding-bottom: 122px;
+}
+
+#midSpacing{
+    height: 80px;
+}
+article{
+    h5:nth-of-type(1){
+        padding: 48px 0;
+        margin-bottom: 0;
+    }
+    h5:nth-of-type(2){
+        font-size: 0.95em;
+        padding-bottom: 80px;
+        margin-bottom: 0;
+    }
+}
+#bottomSpacing{
+    height: 80px;
+}
+
+}

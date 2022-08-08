@@ -1,0 +1,59 @@
+.ServicesApp section h3 {
+  padding-top: 120px;
+  font-size: 2.3em;
+  text-transform: uppercase;
+  font-family: "Playfair Display", serif;
+}
+
+.ServicesApp section h5 {
+  padding-top: 38px;
+  padding-bottom: 134px;
+  font-size: 0.93em;
+  font-weight: 400;
+  font-family: "Raleway", sans-serif;
+}
+
+.ServicesApp article .cardContainer {
+  max-width: 1762px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto 38px auto;
+}
+
+.ServicesApp article .cardContainer .leftDiv {
+  padding: 0 12px;
+}
+
+.ServicesApp article .cardContainer .leftDiv h3 {
+  padding-top: 140px;
+  font-family: "Playfair Display", serif;
+  font-weight: 100;
+  font-size: 1.4em;
+  text-transform: uppercase;
+}
+
+.ServicesApp article .cardContainer .leftDiv h5 {
+  padding-top: 32px;
+  font-style: italic;
+  font-family: "PT Serif", serif;
+  font-size: 1.15em;
+}
+
+.ServicesApp article .cardContainer .leftDiv p {
+  padding-top: 48px;
+  padding-bottom: 128px;
+  font-size: 0.95em;
+  line-height: 1.9em;
+  font-family: "Raleway", sans-serif;
+}
+
+.ServicesApp article .cardContainer .rightDiv {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.ServicesApp article .cardContainer .cardDiv {
+  width: 50%;
+}
+/*# sourceMappingURL=services.css.map */

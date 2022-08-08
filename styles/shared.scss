@@ -1,16 +1,15 @@
-// Variables duh
-$col1 : white;
-$col2 : black;
-$col3: rgb(19, 19, 19);
-$col4: rgb(179, 179, 179); 
+@import '_variables';
 
-$font1 : 'Playfair Display', serif;
-$font2 : 'Roboto', sans-serif;
 
 // The style sheet follows the html flow
 // Global/multiple rules are at the bottom
+#navPush{
+    // Should be set to the same height as navbar pretty much
+    padding-bottom: 97.6px;
+}
 #navOutter{
     position:fixed;
+    top: 0;
     width: 100vw;
     background-color: $col1;
     nav{
@@ -45,40 +44,6 @@ $font2 : 'Roboto', sans-serif;
     background-image: url("Images/background.jpg");
     background-position: center;
     background-attachment: fixed;
-}
-section{
-    h1{
-        text-transform: uppercase;
-        font-family: $font1;
-        font-size: 4.8em;
-        padding: 48px 0 32px 0;
-    }
-    h5{
-        padding-bottom: 36px;
-    }
-    h5:nth-of-type(2){
-        font-size: 1em;
-        font-weight: 400;
-        line-height: 1.8;
-    }
-    padding-bottom: 122px;
-}
-#midSpacing{
-    height: 80px;
-}
-article{
-    h5:nth-of-type(1){
-        padding: 48px 0;
-        margin-bottom: 0;
-    }
-    h5:nth-of-type(2){
-        font-size: 0.95em;
-        padding-bottom: 80px;
-        margin-bottom: 0;
-    }
-}
-#bottomSpacing{
-    height: 80px;
 }
 
 form{
@@ -142,8 +107,8 @@ form{
         background-color: $col4;
         color: $col1;
     }
-    
 }
+
 footer{
     font-family: $font1;
     h4{
@@ -173,17 +138,12 @@ footer{
             background-repeat: no-repeat;
             background-size: cover;
         }
-        #face{
-            background-image: url("./Images/facebook.png");
-        }
-        #inst{
-            background-image: url("./Images/instagram.png");
-        }
     }
     h5:nth-of-type(2){
         padding-bottom: 24px;
     }
 }
+
 // Global rules
 i{
     font-family: $font1;
