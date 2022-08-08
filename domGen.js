@@ -64,9 +64,6 @@ function Index(){
       artDiv.append(header4,header5);
 
 }
-
-
-
 function Services(){
   const section = makeElm('section','text-primary col1');
     const secDiv = makeElm('div','innerDiv col1');
@@ -83,6 +80,19 @@ function Services(){
   DOMTarget.append(section,cards);
     section.append(secDiv);
       secDiv.append(header1,header2);
+}
+function Portfolio(){
+  const section = makeElm('section','col1');
+    const header = makeElm('h1',"","",'Gallery');
+    const para = makeElm('p',"","",'All pigments and tools used are safe, sterile, high end and carefully chosen for the treatments provided.');
+    const button = makeElm('button',"","","See Siren Beauty's portfolio");
+    // button.onClick = 
+  const article = makeElm('article','col1');
+  article.style.backgroundImage = 'url("Images/cardImage.jpg")';
+
+  DOMTarget.append(section,article);
+    section.append(header,para,button);
+  
 }
 function EmailForm(){
   const outterDiv = makeElm('div','col1 inputContainer');

@@ -36,6 +36,7 @@ function makePage(title){
       break;
 
     case "Portfolio":
+      Portfolio();
       break;
 
     case "How to book":
@@ -46,4 +47,4 @@ function makePage(title){
   Footer();
 }
 
-makePage("Services");
+makePage("Portfolio");
