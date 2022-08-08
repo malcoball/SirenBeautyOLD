@@ -18,18 +18,28 @@ function Nav(){
         const midDiv = makeElm('div');
           const home = makeElm('a',"","",'Home');
           home.href = "#";
+          navLinks(home,"home")
           const services = makeElm('a',"","",'Services');
           services.href="#";
+          navLinks(services,"services")
           const port = makeElm('a',"","","Portfolio");
           port.href="#";
+          navLinks(port,"portfolio")
           const book = makeElm('a',"","",'How to book');
           book.href="#";
+          navLinks(book,"how to book")
 
   out.append(navOutter);
   navOutter.append(nav);
   nav.append(cont);
   cont.append(mail,midDiv);
   midDiv.append(home,services,port,book);
+}
+function navLinks(target,targetName){
+  // Add the page changes
+  target.addEventListener("click",()=>{
+    makePage(targetName);
+  })
 }
 function Index(){
   const out = document.querySelector("#app");
@@ -56,6 +66,17 @@ function Index(){
       artDiv.append(header4,header5);
 
 }
+function ServiceCard(title,subHead,para,image){
+}
+function Services(){
+  const article = makeElm('article');
+    const artTitle = makeElm('h1',"","","Our Service Menu");
+    const artText = makeElm('p',"","",'All treatments include a consultation so we can both understand each other in what can be achieved and discuss what is right for you.');
+  
+  const out = document.querySelector("#app");
+    out.append(article);
+      article.append(artTitle,artText);
+}
 function EmailForm(){
   const outterDiv = makeElm('div','col1 inputContainer');
     const innerDiv = makeElm('div','innerDiv col inputLeft');
@@ -75,11 +96,12 @@ function EmailForm(){
           const div31 = makeElm('div');
             const header31 = makeElm('h5',"","",'Subject');
             const input31 = makeElm('input','input single','subjectInput');
-          // 
+          // Text Area
           const div41 = makeElm('div');
             const header41 = makeElm('h5',"","",'Message');
             const input41 = makeElm('textarea','input single','textInput');
-          const div51 = makeElm('div');
+          // Button
+          const div51 = makeElm('div',"",'btnDiv');
             const input51 = makeElm('button',"","",'Submit');
 
   const out = document.querySelector("#app");
@@ -103,18 +125,44 @@ function Footer(){
         const header2 = makeElm('h5',"","","sirenbeautynottingham@gmail.com");
         const imageDiv = makeElm('div',"",'imageDiv');
           const fbLink = makeElm('a',"",'face');
-          fbLink.href="#";
+          fbLink.href="https://www.facebook.com/SirenBeautyNottingham";
+          fbLink.target = "_blank";
           const inLink = makeElm('a',"",'inst');
-          inLink.href="#";
+          inLink.href="https://www.instagram.com/sirenbeautynottingham/";
+          inLink.target = "_blank";
         const header3 = makeElm('h5',"","",'c2022 by Siren Beauty Nottingham.');
   out.append(footer);
     footer.append(div1);
     div1.append(header1,header2,imageDiv,header3);
     imageDiv.append(fbLink,inLink);
 }
+function changePage(title){
+  // Handle all of code when the page changes
+  // Change the nav title
+  document.title = `${title} | Siren Beauty`;
+}
+function makePage(title){
+  document.write("");
+  
+  changePage(title);
+  Nav();
+  switch(title){
+    case "home":
+      Index();
+      EmailForm();
+      break;
 
+    case "services":
+      Services();
+      break;
 
-Nav();
-Index();
-EmailForm();
-Footer();
+    case "portfolio":
+      break;
+
+    case "how to book":
+      break;
+  }
+  Footer();
+}
+
+makePage("home");
