@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 #navPush {
   padding-bottom: 97.6px;
 }
@@ -54,14 +58,13 @@
   background-attachment: fixed;
 }
 
-form {
-  background-color: #131313;
+#EmailFormCont form {
   padding: 0 24px 200px 24px;
   text-align: left;
   min-height: 616px;
 }
 
-form h2 {
+#EmailFormCont form h2 {
   padding-bottom: 36px;
   padding-top: 112px;
   font-family: "Playfair Display", serif;
@@ -70,42 +73,35 @@ form h2 {
   font-size: 2.5rem;
 }
 
-form #inputRequired {
+#EmailFormCont form #inputRequired {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-form #inputRequired div:nth-of-type(1) {
+#EmailFormCont form #inputRequired div:nth-of-type(1) {
   padding-right: 32px;
 }
 
-form .input {
+#EmailFormCont form .input {
   max-width: 960px;
-  background-color: #131313;
-  color: white;
   border: 1px solid #131313;
   border-bottom: 1px solid white;
   margin-bottom: 16px;
   padding-bottom: 4px;
 }
 
-form .input:hover {
-  border-color: white;
-}
-
-form .input:focus {
-  border-color: white;
+#EmailFormCont form .input:focus {
   -webkit-box-shadow: 0px -1px 3px white;
           box-shadow: 0px -1px 3px white;
   outline: none;
 }
 
-form .single {
+#EmailFormCont form .single {
   width: 445px;
 }
 
-form #btnDiv {
+#EmailFormCont form #btnDiv {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -115,21 +111,77 @@ form #btnDiv {
   width: 50%;
 }
 
-form button {
+#EmailFormCont form button {
   border-radius: 4px;
   margin: 12px;
   padding: 6px 12px;
   text-align: center;
   border: none;
-  background-color: white;
   font-style: italic;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-form button:hover {
+#EmailFormCont form button:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
+  -webkit-box-shadow: 0px 0px 2px white;
+          box-shadow: 0px 0px 2px white;
+}
+
+#EmailFormCont form, #EmailFormCont .col1 {
+  background-color: #131313;
+}
+
+#EmailFormCont form .input, #EmailFormCont .col1 .input {
+  background-color: #131313;
+  color: white;
+  border-color: #131313;
+  border-bottom-color: white;
+}
+
+#EmailFormCont form .input:hover, #EmailFormCont .col1 .input:hover {
+  border-color: white;
+}
+
+#EmailFormCont form .input:focus, #EmailFormCont .col1 .input:focus {
+  border-color: white;
+  -webkit-box-shadow: 0px -1px 3px white;
+          box-shadow: 0px -1px 3px white;
+}
+
+#EmailFormCont form button, #EmailFormCont .col1 button {
+  background-color: white;
+}
+
+#EmailFormCont form button:hover, #EmailFormCont .col1 button:hover {
+  -webkit-box-shadow: 0px 0px 2px white;
+          box-shadow: 0px 0px 2px white;
+  background-color: #b3b3b3;
+  color: white;
+}
+
+#EmailFormCont form, #EmailFormCont .col2 {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+#EmailFormCont form .input, #EmailFormCont .col2 .input {
+  background-color: rgba(255, 255, 255, 0);
+  color: black;
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: black;
+}
+
+#EmailFormCont form .input:hover, #EmailFormCont form input:focus, #EmailFormCont .col2 .input:hover, #EmailFormCont .col2 input:focus {
+  border-color: black;
+}
+
+#EmailFormCont form button, #EmailFormCont .col2 button {
+  background-color: black;
+  color: white;
+}
+
+#EmailFormCont form button:hover, #EmailFormCont .col2 button:hover {
   -webkit-box-shadow: 0px 0px 2px white;
           box-shadow: 0px 0px 2px white;
   background-color: #b3b3b3;

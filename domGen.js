@@ -87,17 +87,42 @@ function Portfolio(){
     const para = makeElm('p',"","",'All pigments and tools used are safe, sterile, high end and carefully chosen for the treatments provided.');
     const button = makeElm('button',"","","See Siren Beauty's portfolio");
     // button.onClick = 
-  const article = makeElm('article','col1');
-  article.style.backgroundImage = 'url("Images/cardImage.jpg")';
+  const background = makeElm('background','col1');
+    const backgroundInner = makeElm('div',"background")
+    backgroundInner.style.backgroundImage = 'url("Images/portBackground.jpg")';
 
-  DOMTarget.append(section,article);
+  DOMTarget.append(section,background);
     section.append(header,para,button);
+    background.append(backgroundInner);
   
 }
-function EmailForm(){
-  const outterDiv = makeElm('div','col1 inputContainer');
-    const innerDiv = makeElm('div','innerDiv col inputLeft');
-      const form = makeElm('form',"",'EmailForm');
+function Booking(){
+  const section = makeElm('section');
+    const secLeftDiv = makeElm('div','leftDiv');
+      const title = makeElm('h3',"","",'come visit us');
+      const para1 = makeElm('p',"","",'Please email for a free consultation and to set your appointment time.');
+      const para2 = makeElm('p',"","",'Levanas 10B High street HucknallNottingham NG15');
+      const para3 = makeElm('a',"","",'sirenbeautynottingham@gmail.com');
+      para3.href = "_mailto : sirenbeautynottingham@gmail.com";
+    const secRightDiv = makeElm('div','rightDiv');
+      const emailForm = EmailForm(false,"col2");
+  const midSpace = makeElm('div','midSpace');
+   midSpace.style.backgroundImage = 'url("Images/cardImage.jpg")';
+  const article = makeElm('article');
+    // article.style.backgroundImage = 'url("Images/map.jpg")';
+    const mapOut = makeElm('div',"",'map');
+
+
+  DOMTarget.append(section,midSpace,article);
+    section.append(secLeftDiv,secRightDiv);
+      secLeftDiv.append(title,para1,para2,para3);
+      secRightDiv.append(emailForm);
+    article.append(mapOut);
+}
+function EmailForm(addToDOM = true, color = "col1"){
+  const outterDiv = makeElm('div',`${color} inputContainer`);
+    const innerDiv = makeElm('div',`innerDiv ${color} inputLeft`,'EmailFormCont');
+      const form = makeElm('form',`form ${color}`,'EmailForm');
         // Title of the form
         const header1 = makeElm('h2',"","",'Come Visit Us');
         const div1 = makeElm('div','inputRequired');
@@ -125,9 +150,7 @@ function EmailForm(){
           const div51 = makeElm('div',"",'btnDiv');
             const input51 = makeElm('button',"","",'Submit');
 
-  const out = document.querySelector("#app");
-    out.append(outterDiv);
-      outterDiv.append(innerDiv);
+            outterDiv.append(innerDiv);
         innerDiv.append(form);
           form.append(header1,div1);
             div1.append(div11,div21,div31,div41,div51);
@@ -136,6 +159,13 @@ function EmailForm(){
               div31.append(header31,input31);
               div41.append(header41,input41);
               div51.append(input51);
+  if (addToDOM === true){
+  const out = document.querySelector("#app");
+    out.append(outterDiv);
+  } else {
+    return outterDiv;
+  }
+      
 
 }
 function Footer(){

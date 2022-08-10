@@ -1,5 +1,11 @@
 .PortfolioApp section {
+  padding-top: 96px;
   text-align: center;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.438);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: white;
 }
 
 .PortfolioApp section h1 {
@@ -10,13 +16,16 @@
 
 .PortfolioApp section p {
   padding-top: 56px;
+  margin: 0 auto;
+  max-width: 512px;
   font-family: "Raleway", sans-serif;
-  font-size: 0.9em;
+  font-size: 1.2em;
 }
 
 .PortfolioApp section button {
   font-family: "Raleway", sans-serif;
   font-size: 0.88em;
+  margin-top: 96px;
   padding: 12px;
   border: 1px solid white;
   background-color: black;
@@ -30,8 +39,34 @@
   color: black;
 }
 
-.PortfolioApp article {
-  background-color: black;
+.PortfolioApp section:hover {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.PortfolioApp section:hover button {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0px 2px 6px black;
+          box-shadow: 0px 2px 6px black;
+}
+
+.PortfolioApp background {
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  z-index: -1;
   height: 100vh;
+  width: 100vw;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.PortfolioApp background div {
+  margin: auto auto;
+  width: 720px;
+  height: 720px;
+  border-radius: 50%;
 }
 /*# sourceMappingURL=portfolio.css.map */

@@ -1,5 +1,7 @@
 @import '_variables';
-
+body{
+    overflow-x: hidden;
+}
 
 // The style sheet follows the html flow
 // Global/multiple rules are at the bottom
@@ -46,66 +48,111 @@
     background-attachment: fixed;
 }
 
-form{
-    background-color: $col3;
-    padding:0 24px 200px 24px;
-    text-align: left;
-    min-height: 616px;
-    h2{
-        padding-bottom: 36px;
-        padding-top: 112px;
-        font-family: $font1;
-        font-weight: 100;
-        text-transform: uppercase;
-        font-size: 2.5rem;
-    }
-    #inputRequired{
-        display:flex;
-        div:nth-of-type(1){
-            padding-right: 32px;
+
+#EmailFormCont{
+    form{
+        padding:0 24px 200px 24px;
+        text-align: left;
+        min-height: 616px;
+        h2{
+            padding-bottom: 36px;
+            padding-top: 112px;
+            font-family: $font1;
+            font-weight: 100;
+            text-transform: uppercase;
+            font-size: 2.5rem;
+        }
+        #inputRequired{
+            display:flex;
+            div:nth-of-type(1){
+                padding-right: 32px;
+            }
+        }
+        .input{
+            max-width:960px;
+            border: 1px solid $col3;
+            border-bottom: 1px solid $col1;
+            margin-bottom: 16px;
+            padding-bottom: 4px;
+        }
+        .input:focus{
+            box-shadow: 0px -1px 3px $col1;
+    
+            outline: none;
+        }
+        .single{
+            width: 445px;
+        }
+        #btnDiv{
+            display:flex;
+            justify-content: center;
+            width: 50%;
+        }
+        button{
+            border-radius: 4px;
+            margin: 12px;
+            padding:6px 12px;
+            text-align: center;
+            border: none;
+            font-style: italic;
+            transition: 0.3s;
+        }
+        button:hover{
+            transform: scale(1.05);
+            box-shadow: 0px 0px 2px rgb(255, 255, 255);
         }
     }
-    .input{
-        max-width:960px;
+    form, .col1{ // Unique color themes for inputs, kinda
         background-color: $col3;
-        color: $col1;
-        border: 1px solid $col3;
-        border-bottom: 1px solid $col1;
-        margin-bottom: 16px;
-        padding-bottom: 4px;
+        
+        
+        .input{
+            background-color: $col3;
+            color: $col1;
+            border-color: $col3;
+            border-bottom-color: $col1;
+        }
+        .input:hover{
+            border-color: $col1;
+        }
+        .input:focus{
+            border-color: $col1;
+            box-shadow: 0px -1px 3px $col1;
+        }
+        button{
+        
+            background-color: $col1;
+        }
+        button:hover{
+            box-shadow: 0px 0px 2px rgb(255, 255, 255);
+            background-color: $col4;
+            color: $col1;
+        }
     }
-    .input:hover{
-        border-color: $col1;
-    }
-    .input:focus{
-        border-color: $col1;
-        box-shadow: 0px -1px 3px $col1;
+    form, .col2{ // Unique color themes for inputs, kinda
+        background-color: rgba(255, 255, 255, 0);
 
-        outline: none;
-    }
-    .single{
-        width: 445px;
-    }
-    #btnDiv{
-        display:flex;
-        justify-content: center;
-        width: 50%;
-    }
-    button{
-        border-radius: 4px;
-        margin: 12px;
-        padding:6px 12px;
-        text-align: center;
-        border: none;
-        background-color: $col1;
-        font-style: italic;
-        transition: 0.3s;
-    }
-    button:hover{
-        transform: scale(1.05);
-        box-shadow: 0px 0px 2px rgb(255, 255, 255);
-        background-color: $col4;
-        color: $col1;
+
+        .input{
+            background-color: rgba(255, 255, 255, 0);
+            color: $col2;
+            border-color: rgba(255, 255, 255, 0);
+            border-bottom-color: $col2;
+        }
+        .input:hover, input:focus{
+            border-color: $col2;
+        }
+
+
+        button{
+            background-color: $col2;
+            color: $col1;
+        }
+        button:hover{
+            box-shadow: 0px 0px 2px rgb(255, 255, 255);
+            background-color: $col4;
+            color: $col1;
+        }
     }
 }
 

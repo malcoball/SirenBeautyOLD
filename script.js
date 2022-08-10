@@ -13,6 +13,7 @@ function changePage(title){
   // Remove the old content
   const root = document.querySelector("#app");
   // Make sure the app element has a unique tag
+  if (title === "How to book") title = "Booking"
   root.className = title+"App";
 
   while (root.firstChild) {
@@ -40,6 +41,7 @@ function makePage(title){
       break;
 
     case "How to book":
+      Booking();
       break;
 
     default: alert("title hasn't been set on makePage"); break;
@@ -47,4 +49,4 @@ function makePage(title){
   Footer();
 }
 
-makePage("Portfolio");
+makePage("How to book");

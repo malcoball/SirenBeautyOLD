@@ -23,6 +23,7 @@
 
 .ServicesApp article .cardContainer .leftDiv {
   padding: 0 12px;
+  width: 600px;
 }
 
 .ServicesApp article .cardContainer .leftDiv h3 {
