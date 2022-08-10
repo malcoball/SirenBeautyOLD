@@ -17,37 +17,47 @@ section{
     }
 }
 article{
+    position: relative;
+    bottom: 24px;
     .cardContainer{
+        border-radius: 24px;
         max-width: 1762px;
         display: flex;
         margin: 0 auto 38px auto;
         .leftDiv{
             padding:0 12px;
             width: 600px;
-            h3{
-                padding-top: 140px;
-                font-family: $font1;
-                font-weight: 100;
-                font-size: 1.4em;
-                text-transform: uppercase;
-            }
-            h5{
-                padding-top:32px;
-                font-style: italic;
-                font-family: $font3;
-                font-size: 1.15em;
-            }
-            p{
-                padding-top: 48px;
-                padding-bottom: 128px;
-                font-size: 0.95em;
-                line-height: 1.9em;
-                font-family: $font2;
-            }
+                .leftDivInner{
+                    max-width:600px;
+                    margin: auto;
+                    h3{
+                        padding-top: 140px;
+                        font-family: $font1;
+                        font-weight: 100;
+                        font-size: 1.4em;
+                        text-transform: uppercase;
+                    }
+                    h5{
+                        padding-top:32px;
+                        font-style: italic;
+                        font-family: $font3;
+                        font-size: 1.15em;
+                    }
+                    p{
+                        padding-top: 48px;
+                        padding-bottom: 128px;
+                        font-size: 0.95em;
+                        line-height: 1.9em;
+                        font-family: $font2;
+                    }
+                }
         }
         .rightDiv{
             background-repeat: no-repeat;
             background-size: cover;
+            // border-radius: inherit;
+            border-top-right-radius: inherit;
+            border-bottom-right-radius: inherit;
         }
         .cardDiv{
             width: 50%;

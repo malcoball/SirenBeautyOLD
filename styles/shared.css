@@ -7,6 +7,7 @@ body {
 }
 
 #navOutter {
+  z-index: 2;
   position: fixed;
   top: 0;
   width: 100vw;
@@ -39,7 +40,7 @@ body {
 #navOutter nav #navCont a {
   -ms-flex-item-align: start;
       align-self: flex-start;
-  color: black;
+  color: #4e4343;
   text-decoration: none;
 }
 
@@ -152,6 +153,7 @@ body {
 
 #EmailFormCont form button, #EmailFormCont .col1 button {
   background-color: white;
+  color: #4e4343;
 }
 
 #EmailFormCont form button:hover, #EmailFormCont .col1 button:hover {
@@ -167,17 +169,17 @@ body {
 
 #EmailFormCont form .input, #EmailFormCont .col2 .input {
   background-color: rgba(255, 255, 255, 0);
-  color: black;
+  color: #4e4343;
   border-color: rgba(255, 255, 255, 0);
-  border-bottom-color: black;
+  border-bottom-color: #4e4343;
 }
 
 #EmailFormCont form .input:hover, #EmailFormCont form input:focus, #EmailFormCont .col2 .input:hover, #EmailFormCont .col2 input:focus {
-  border-color: black;
+  border-color: #4e4343;
 }
 
 #EmailFormCont form button, #EmailFormCont .col2 button {
-  background-color: black;
+  background-color: #4e4343;
   color: white;
 }
 
@@ -244,12 +246,12 @@ i {
 }
 
 .col1 {
-  background-color: black;
+  background-color: #4e4343;
   color: white;
 }
 
 .col2 {
   background-color: white;
-  color: black;
+  color: #4e4343;
 }
 /*# sourceMappingURL=shared.css.map */

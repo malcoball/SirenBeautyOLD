@@ -23,6 +23,11 @@
   height: 80px;
 }
 
+.HomeApp article {
+  max-width: 1700px;
+  margin: auto;
+}
+
 .HomeApp article h5:nth-of-type(1) {
   padding: 48px 0;
   margin-bottom: 0;

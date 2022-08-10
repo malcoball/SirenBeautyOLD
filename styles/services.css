@@ -13,7 +13,13 @@
   font-family: "Raleway", sans-serif;
 }
 
+.ServicesApp article {
+  position: relative;
+  bottom: 24px;
+}
+
 .ServicesApp article .cardContainer {
+  border-radius: 24px;
   max-width: 1762px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -26,7 +32,12 @@
   width: 600px;
 }
 
-.ServicesApp article .cardContainer .leftDiv h3 {
+.ServicesApp article .cardContainer .leftDiv .leftDivInner {
+  max-width: 600px;
+  margin: auto;
+}
+
+.ServicesApp article .cardContainer .leftDiv .leftDivInner h3 {
   padding-top: 140px;
   font-family: "Playfair Display", serif;
   font-weight: 100;
@@ -34,14 +45,14 @@
   text-transform: uppercase;
 }
 
-.ServicesApp article .cardContainer .leftDiv h5 {
+.ServicesApp article .cardContainer .leftDiv .leftDivInner h5 {
   padding-top: 32px;
   font-style: italic;
   font-family: "PT Serif", serif;
   font-size: 1.15em;
 }
 
-.ServicesApp article .cardContainer .leftDiv p {
+.ServicesApp article .cardContainer .leftDiv .leftDivInner p {
   padding-top: 48px;
   padding-bottom: 128px;
   font-size: 0.95em;
@@ -52,6 +63,8 @@
 .ServicesApp article .cardContainer .rightDiv {
   background-repeat: no-repeat;
   background-size: cover;
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
 }
 
 .ServicesApp article .cardContainer .cardDiv {
