@@ -1,10 +1,13 @@
-function navLinks(target,targetName){
-  // Add the page changes
-  target.addEventListener("click",()=>{
-    console.log("targetName",targetName)
-    makePage(targetName);
-  })
-}
+import Index from './Components/Elements/Index.js';
+import Navbar from './Components/Elements/NavBar.js';
+import EmailForm from './Components/Elements/EmailForm.js';
+import Services from './Components/Elements/Services.js';
+import Portfolio from './Components/Elements/Portfolio.js';
+import Booking from './Components/Elements/Booking.js';
+import Footer from './Components/Elements/Footer.js';
+
+const out = document.querySelector('#app');
+
 
 function changePage(title){
   // Handle all of code when the page changes
@@ -24,29 +27,30 @@ function changePage(title){
 }
 function makePage(title){
   changePage(title);
-  Nav();
+  Navbar(out);
   switch(title){
     case "Index":
     case "Home":
-      Index();
-      EmailForm();
+      Index(out);
+      EmailForm(out);
       break;
 
     case "Services":
-      Services();
+      Services(out);
       break;
 
     case "Portfolio":
-      Portfolio();
+      Portfolio(out);
       break;
 
+    case "Book":
     case "How to book":
-      Booking();
+      Booking(out);
       break;
 
     default: alert("title hasn't been set on makePage"); break;
   }
-  Footer();
+  Footer(out);
 }
 
 makePage("How to book");

@@ -1,4 +1,6 @@
-function ServiceCard(titleText,subHeadText,paraText,imageSrc){
+import makeElm from "../MakeElm.js";
+
+export default function ServiceCard(titleText,subHeadText,paraText,imageSrc){
     const mainCon = makeElm('div','cardContainer col2');
       const leftCon = makeElm('div','leftDiv cardDiv');
         const leftConSpace = makeElm('div','leftDivInner');

@@ -52,6 +52,18 @@ body {
   padding-right: 24px;
 }
 
+@media screen and (max-width: 600px) {
+  nav .desktop {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  nav .mobile {
+    display: none;
+  }
+}
+
 #topSpacing {
   height: 560px;
   background-image: url("Images/background.jpg");
