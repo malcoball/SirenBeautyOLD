@@ -64,4 +64,32 @@ article{
         }
     }
 }
+@media (max-width:$breakpoint) { // Mobile view
+article{
+    padding-bottom: 36px;
+    .cardContainer{
+        flex-direction: column;
+        border-radius: 12px;
+        .leftDiv{
+            width: 100%;
+            h3{
+                text-align: center;
+                padding-top: 32px !important;
+            }
+            h5{
+                text-align: center;
+            }
+            p{
+                padding: 12px 0 !important;  
+            }
+        }
+        .rightDiv{
+            border-top-right-radius: 0;
+            border-bottom-left-radius: inherit;
+            width:100%;
+            height: 220px;
+        }
+    }
+}   
+}
 }

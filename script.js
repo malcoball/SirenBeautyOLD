@@ -1,6 +1,7 @@
 // import Pages from './Components/Pages.js'
 import Pages from './Components/Pages.js'
 import Navbar from './Components/Elements/NavBar.js'
+import OpenEmail from './Components/OpenEmail.js';
 import Footer from './Components/Elements/Footer.js'
 
 
@@ -12,7 +13,10 @@ function navLinks(){
   const links = document.querySelectorAll(".navLink");
   links.forEach(element => {
     element.addEventListener("click",()=>{
-      makePage(element.DOMTarget);
+      if (element.DOMTarget === "Mail") OpenEmail();
+      else {
+        makePage(element.DOMTarget);
+      }
     })
   });
 }
@@ -33,6 +37,9 @@ function changePage(title){
   
 }
 function makePage(title){
+  if (title === "Mail"){
+    alert("send email pls");
+  } else {
   changePage(title);
   Navbar(out);
   navLinks();
@@ -50,14 +57,15 @@ function makePage(title){
       Pages.Portfolio(out);
       break;
 
-    case "Book":
     case "How to book":
       Pages.Booking(out);
       break;
 
-    default: alert("title hasn't been set on makePage"); break;
+
+    default: alert(`${title} passed`); break;
   }
   Footer(out);
+  }
 }
 function init(){
   makePage("Home");

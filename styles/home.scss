@@ -18,14 +18,14 @@
             line-height: 1.8;
         }
         padding-bottom: 122px;
-        @media screen and (max-width:$breakpoint) { // Mobile view
+        @media (max-width:$breakpoint) { // Mobile view
             h1{
                 font-size: 2.4em;
             }
             
         }
 }
-@media screen and (max-width:$breakpoint) { // Mobile view
+@media (max-width:$breakpoint) { // Mobile view
     #midSpacing{
         height: 24px !important;
     }

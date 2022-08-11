@@ -9,6 +9,12 @@ body{
     // Should be set to the same height as navbar pretty much
     padding-bottom: 97.6px;
 }
+@media (max-width:$breakpoint) {
+    #navPush{
+        padding-bottom: 72px;
+    }
+    
+}
 #navOutter{
     z-index: 2;
     position:fixed;
@@ -45,7 +51,7 @@ body{
     }
     }
 }
-@media screen and (max-width:$breakpoint) { // Mobile view
+@media (max-width:$breakpoint) { // Mobile view
 #navOutter{
         nav{
             .mobile{
@@ -80,7 +86,7 @@ body{
         }
     }
 }
-@media screen and (min-width:$breakpoint) { // Desktop view
+@media (min-width:$breakpoint) { // Desktop view
     nav{
         
         .linksCont{
@@ -205,7 +211,7 @@ body{
         }
     }
 }
-@media screen and (max-width:$breakpoint) { // Mobile view
+@media (max-width:$breakpoint) { // Mobile view
     #EmailFormCont{
         .inputRequired{
             flex-direction: column;
@@ -272,6 +278,7 @@ footer{
         padding-bottom: 24px;
     }
 }
+
 
 // Global rules
 i{

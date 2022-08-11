@@ -70,4 +70,36 @@
 .ServicesApp article .cardContainer .cardDiv {
   width: 50%;
 }
+
+@media (max-width: 684px) {
+  .ServicesApp article {
+    padding-bottom: 36px;
+  }
+  .ServicesApp article .cardContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    border-radius: 12px;
+  }
+  .ServicesApp article .cardContainer .leftDiv {
+    width: 100%;
+  }
+  .ServicesApp article .cardContainer .leftDiv h3 {
+    text-align: center;
+    padding-top: 32px !important;
+  }
+  .ServicesApp article .cardContainer .leftDiv h5 {
+    text-align: center;
+  }
+  .ServicesApp article .cardContainer .leftDiv p {
+    padding: 12px 0 !important;
+  }
+  .ServicesApp article .cardContainer .rightDiv {
+    border-top-right-radius: 0;
+    border-bottom-left-radius: inherit;
+    width: 100%;
+    height: 220px;
+  }
+}
 /*# sourceMappingURL=services.css.map */

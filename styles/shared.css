@@ -6,6 +6,12 @@ body {
   padding-bottom: 97.6px;
 }
 
+@media (max-width: 684px) {
+  #navPush {
+    padding-bottom: 72px;
+  }
+}
+
 #navOutter {
   z-index: 2;
   position: fixed;
@@ -53,7 +59,7 @@ body {
   display: none;
 }
 
-@media screen and (max-width: 684px) {
+@media (max-width: 684px) {
   #navOutter nav .mobile {
     display: block;
   }
@@ -96,7 +102,7 @@ body {
   }
 }
 
-@media screen and (min-width: 684px) {
+@media (min-width: 684px) {
   nav .linksCont {
     padding-left: 96px;
   }
@@ -209,7 +215,7 @@ body {
 #EmailFormCont form button:hover, #EmailFormCont .col1 button:hover {
   -webkit-box-shadow: 0px 0px 2px white;
           box-shadow: 0px 0px 2px white;
-  background-color: #b3b3b3;
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
 }
 
@@ -236,11 +242,11 @@ body {
 #EmailFormCont form button:hover, #EmailFormCont .col2 button:hover {
   -webkit-box-shadow: 0px 0px 2px white;
           box-shadow: 0px 0px 2px white;
-  background-color: #b3b3b3;
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
 }
 
-@media screen and (max-width: 684px) {
+@media (max-width: 684px) {
   #EmailFormCont .inputRequired {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

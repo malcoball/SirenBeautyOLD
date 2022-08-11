@@ -69,4 +69,16 @@
   height: 720px;
   border-radius: 50%;
 }
+
+@media (max-width: 684px) {
+  .PortfolioApp section {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .PortfolioApp background {
+    top: 72px;
+  }
+  .PortfolioApp background div {
+    border-radius: 0px;
+  }
+}
 /*# sourceMappingURL=portfolio.css.map */

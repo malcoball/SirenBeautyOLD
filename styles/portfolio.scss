@@ -63,4 +63,15 @@ background{
 
     }
 }
+@media (max-width:$breakpoint){
+    section{
+        background-color: $col4;
+    }
+    background{
+        div{
+            border-radius: 0px;
+        }
+        top:72px;
+    }
+}
 }

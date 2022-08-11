@@ -16,7 +16,8 @@ export default function Nav(DOMTarget){
     const navOutter = makeElm('div',"",'navOutter');
       const nav = makeElm('nav');
         const cont = makeElm('div',"",'navCont');
-          const mail = makeElm('a',"desktop","",'sirenbeautynottingham@gmail.com');
+          const mail = makeElm('a',"desktop navLink","",'sirenbeautynottingham@gmail.com');
+          mail.DOMTarget = "Mail";
           mail.href = "#";
           const midDiv = makeElm('div','linksCont');
             const midDivLinks = [];
@@ -40,6 +41,7 @@ export default function Nav(DOMTarget){
             midDivLinks[midDivLinks.length-1].DOMTarget = 'Portfolio';
             midDivLinks.push(mobileLinks('Booking','Images/NavIcons/Book.png'));
             midDivLinks[midDivLinks.length-1].DOMTarget = 'How to book';
+            
             
   
   
