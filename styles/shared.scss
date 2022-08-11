@@ -34,7 +34,6 @@ body{
             text-decoration: none;
         }
         div{
-            padding-left: 96px;
             a{
                 padding-right: 24px;
             }
@@ -42,17 +41,45 @@ body{
     } 
     }
 }
-@media screen and (max-width:600px) {
-    nav{
-        .desktop{
-            display: none;
+@media screen and (max-width:$breakpoint) { // Mobile view
+#navOutter{
+        nav{
+            .desktop{
+                display: none;
+            }
+            #navCont{
+                margin: 4px 24px;
+                // margin-right: 24px ;
+                .linksCont{
+                    display:flex;
+                    justify-content: space-around;
+                    width: 100%;
+                    padding: 0;
+                    .mobileIcon{
+                        display: flex;
+                        flex-direction: column-reverse;
+                        align-items: center;
+                        text-align: center;
+                        img{
+                        filter: brightness(0%);
+                        width: 32px;
+                        }
+                        a{
+                            padding-right: 0;
+                        }
+                    }
+                }
+            }
         }
     }
 }
-@media screen and (min-width:600px) {
+@media screen and (min-width:$breakpoint) { // Desktop view
     nav{
         .mobile{
             display: none;
+        }
+        .linksCont{
+            padding-left: 96px;
         }
     }
 }

@@ -1,5 +1,5 @@
 import makeElm from "../MakeElm.js";
-import EmailForm from "./EmailForm.js";
+import EmailForm from "../Elements/EmailForm.js";
 export default function Booking(DOMTarget){
     const section = makeElm('section');
       const secLeftDiv = makeElm('div','leftDiv');

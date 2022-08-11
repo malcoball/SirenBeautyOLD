@@ -44,23 +44,55 @@ body {
   text-decoration: none;
 }
 
-#navOutter nav #navCont div {
-  padding-left: 96px;
-}
-
 #navOutter nav #navCont div a {
   padding-right: 24px;
 }
 
-@media screen and (max-width: 600px) {
-  nav .desktop {
+@media screen and (max-width: 684px) {
+  #navOutter nav .desktop {
     display: none;
+  }
+  #navOutter nav #navCont {
+    margin: 4px 24px;
+  }
+  #navOutter nav #navCont .linksCont {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    width: 100%;
+    padding: 0;
+  }
+  #navOutter nav #navCont .linksCont .mobileIcon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  #navOutter nav #navCont .linksCont .mobileIcon img {
+    -webkit-filter: brightness(0%);
+            filter: brightness(0%);
+    width: 32px;
+  }
+  #navOutter nav #navCont .linksCont .mobileIcon a {
+    padding-right: 0;
   }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 684px) {
   nav .mobile {
     display: none;
+  }
+  nav .linksCont {
+    padding-left: 96px;
   }
 }
 

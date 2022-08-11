@@ -1,5 +1,6 @@
 import makeElm from "../MakeElm.js";
-import ServiceCard from "./ServiceCard.js";
+// import ServiceCard from "./ServiceCard.js";
+import ServiceCard from "../Elements/ServiceCard.js";
 
 export default function Services(DOMTarget){
     const section = makeElm('section','text-primary col1');

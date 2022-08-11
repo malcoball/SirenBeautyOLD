@@ -1,14 +1,22 @@
-import Index from './Components/Elements/Index.js';
-import Navbar from './Components/Elements/NavBar.js';
-import EmailForm from './Components/Elements/EmailForm.js';
-import Services from './Components/Elements/Services.js';
-import Portfolio from './Components/Elements/Portfolio.js';
-import Booking from './Components/Elements/Booking.js';
-import Footer from './Components/Elements/Footer.js';
+// import Pages from './Components/Pages.js'
+import Pages from './Components/Pages.js'
+import Navbar from './Components/Elements/NavBar.js'
+import Footer from './Components/Elements/Footer.js'
+
 
 const out = document.querySelector('#app');
 
-
+function navLinks(){
+  // Add functionality to the navbar essentially
+  // Get all the links
+  const links = document.querySelectorAll("#navCont a");
+  links.forEach(element => {
+    element.addEventListener("click",()=>{
+      // changePage(element.innerHTML);
+      makePage(element.innerHTML);
+    })
+  });
+}
 function changePage(title){
   // Handle all of code when the page changes
   // Change the nav title
@@ -28,29 +36,31 @@ function changePage(title){
 function makePage(title){
   changePage(title);
   Navbar(out);
+  navLinks();
+
   switch(title){
-    case "Index":
     case "Home":
-      Index(out);
-      EmailForm(out);
+      Pages.Index(out);
       break;
 
     case "Services":
-      Services(out);
+      Pages.Services(out);
       break;
 
     case "Portfolio":
-      Portfolio(out);
+      Pages.Portfolio(out);
       break;
 
     case "Book":
     case "How to book":
-      Booking(out);
+      Pages.Booking(out);
       break;
 
     default: alert("title hasn't been set on makePage"); break;
   }
   Footer(out);
 }
-
-makePage("How to book");
+function init(){
+  makePage("Home");
+}
+init();

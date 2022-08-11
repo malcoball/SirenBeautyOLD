@@ -1,4 +1,5 @@
 import makeElm from "../MakeElm.js";
+import EmailForm from "../Elements/EmailForm.js";
 
 export default function Index(DOMTarget){
     const topSpace = makeElm('div',"",'topSpacing');
@@ -13,12 +14,12 @@ export default function Index(DOMTarget){
     const midSpace = makeElm('div',"",'midSpacing');
     const article = makeElm('article',"col1");
       const artDiv = makeElm('div','innerDiv col1');
-        const header4 = makeElm('h5',"","","<i>We're waiting From You!</i>");
+        const header4 = makeElm('h5',"","","<i>We're waiting For You!</i>");
         const header5 = makeElm('h5',"","",'Fridays 10 till 8');
   
     const botSpace = makeElm('div',"",'bottomSpacing');
   
-    DOMTarget.append(topSpace,section,midSpace,article,botSpace);
+    DOMTarget.append(topSpace,section,midSpace,article,botSpace,EmailForm(null,false));
       section.append(secDiv);
         secDiv.append(header1,header2,header3);
       article.append(artDiv);
