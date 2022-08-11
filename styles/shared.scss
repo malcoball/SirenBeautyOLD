@@ -29,6 +29,7 @@ body{
         display: flex;
         justify-content: flex-start;
         a{
+            cursor: pointer;
             align-self: flex-start;
             color: $col2;
             text-decoration: none;
@@ -38,31 +39,37 @@ body{
                 padding-right: 24px;
             }
         }
-    } 
+        } 
+    .mobile{
+        display:none;
+    }
     }
 }
 @media screen and (max-width:$breakpoint) { // Mobile view
 #navOutter{
         nav{
+            .mobile{
+                display:block;
+            }
             .desktop{
                 display: none;
             }
             #navCont{
                 margin: 4px 24px;
-                // margin-right: 24px ;
                 .linksCont{
                     display:flex;
                     justify-content: space-around;
                     width: 100%;
                     padding: 0;
                     .mobileIcon{
+                        cursor: pointer;
                         display: flex;
                         flex-direction: column-reverse;
                         align-items: center;
                         text-align: center;
                         img{
-                        filter: brightness(0%);
-                        width: 32px;
+                        filter: brightness(20%);
+                        width: 24px;
                         }
                         a{
                             padding-right: 0;
@@ -75,9 +82,7 @@ body{
 }
 @media screen and (min-width:$breakpoint) { // Desktop view
     nav{
-        .mobile{
-            display: none;
-        }
+        
         .linksCont{
             padding-left: 96px;
         }
@@ -104,10 +109,12 @@ body{
             text-transform: uppercase;
             font-size: 2.5rem;
         }
-        #inputRequired{
-            display:flex;
-            div:nth-of-type(1){
-                padding-right: 32px;
+        .formInCont{
+            .inputRequired{
+                display: flex;
+                div:nth-of-type(1){
+                    padding-right: 32px;
+                }
             }
         }
         .input{
@@ -196,6 +203,38 @@ body{
             background-color: $col4;
             color: $col1;
         }
+    }
+}
+@media screen and (max-width:$breakpoint) { // Mobile view
+    #EmailFormCont{
+        .inputRequired{
+            flex-direction: column;
+        }
+        form{
+            .formInCont{
+                div{
+                    padding-right: 0 !important;
+                }
+                h5{
+                    text-align: center;
+                }
+                input{
+                    width: 80vw;
+                }
+                textarea{
+                    width: 80vw;
+                }
+            }
+            #btnDiv{
+                position: absolute;
+                left: 0;
+                width:100vw;
+            }
+        }
+        h2{
+            text-align: center;
+        }
+        
     }
 }
 

@@ -1,7 +1,7 @@
 import makeElm from "../MakeElm.js";
 
 function mobileLinks (name,imageSrc){
-  const out = makeElm('div','mobileIcon');
+  const out = makeElm('div','mobileIcon navLink');
     const text = makeElm('a','mobile',"",name);
     const img = makeElm('img','mobile',"");
     img.src = imageSrc;
@@ -21,21 +21,26 @@ export default function Nav(DOMTarget){
           const midDiv = makeElm('div','linksCont');
             const midDivLinks = [];
             // Desktop
-            midDivLinks.push(makeElm('a','desktop',"navHome",'Home'))
-            midDivLinks.push(makeElm('a','desktop',"navServ",'Services'))
-            midDivLinks.push(makeElm('a','desktop',"navPort",'Portfolio'))
-            midDivLinks.push(makeElm('a','desktop',"navBook",'How to book'))
+            midDivLinks.push(makeElm('a','desktop navLink',"navHome",'Home'))
+            midDivLinks.push(makeElm('a','desktop navLink',"navServ",'Services'))
+            midDivLinks.push(makeElm('a','desktop navLink',"navPort",'Portfolio'))
+            midDivLinks.push(makeElm('a','desktop navLink',"navBook",'How to book'))
+            // DOMTarget is essentially what's used to handle the different page loads(name of wanted page)
+            midDivLinks.forEach(element => {
+              element.DOMTarget = element.innerHTML;
+            });
             // Mobile
-            // midDivLinks.push(makeElm('a','mobile',"",'Email'));
-            // midDivLinks.push(makeElm('a','mobile',"navHome",'Home'))
-            // midDivLinks.push(makeElm('a','mobile',"navServ",'Services'))
-            // midDivLinks.push(makeElm('a','mobile',"navPort",'Portfolio'))
-            // midDivLinks.push(makeElm('a','mobile',"navBook",'Booking'))
             midDivLinks.push(mobileLinks('Email','Images/NavIcons/Mail.png'));
+            midDivLinks[midDivLinks.length-1].DOMTarget = 'Mail';
             midDivLinks.push(mobileLinks('Home','Images/NavIcons/Home.png'));
+            midDivLinks[midDivLinks.length-1].DOMTarget = 'Home';
             midDivLinks.push(mobileLinks('Services','Images/NavIcons/Mail.png'));
+            midDivLinks[midDivLinks.length-1].DOMTarget = 'Services';
             midDivLinks.push(mobileLinks('Portfolio','Images/NavIcons/Port.png'));
+            midDivLinks[midDivLinks.length-1].DOMTarget = 'Portfolio';
             midDivLinks.push(mobileLinks('Booking','Images/NavIcons/Book.png'));
+            midDivLinks[midDivLinks.length-1].DOMTarget = 'How to book';
+            
   
   
     DOMTarget.append(navOutter,navPush);

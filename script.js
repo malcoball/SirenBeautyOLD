@@ -8,12 +8,11 @@ const out = document.querySelector('#app');
 
 function navLinks(){
   // Add functionality to the navbar essentially
-  // Get all the links
-  const links = document.querySelectorAll("#navCont a");
+  // Desktop links
+  const links = document.querySelectorAll(".navLink");
   links.forEach(element => {
     element.addEventListener("click",()=>{
-      // changePage(element.innerHTML);
-      makePage(element.innerHTML);
+      makePage(element.DOMTarget);
     })
   });
 }
