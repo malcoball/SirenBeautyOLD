@@ -54,5 +54,25 @@ article{
 #bottomSpacing{
     height: 80px;
 }
+.formCont{
+    height: 760px;;
+    background-color: $col2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .inputContainer{
+        height: 100%;
+        #EmailFormCont{
+            height: 100%;
+            #EmailForm{
+                height:100%;
+            }
+        }
+    }
+    #map{
+        height: 100%;
+        width: 320px;
+    }
+}
 
 }

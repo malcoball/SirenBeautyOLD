@@ -1,5 +1,7 @@
 import makeElm from "../MakeElm.js";
 import EmailForm from "../Elements/EmailForm.js";
+import Map from "../Elements/Map.js"
+import ContactInfo from "../Elements/ContactInfo.js";
 
 export default function Index(DOMTarget){
     const topSpace = makeElm('div',"",'topSpacing');
@@ -18,10 +20,21 @@ export default function Index(DOMTarget){
         const header5 = makeElm('h5',"","",'Fridays 10 till 8');
   
     const botSpace = makeElm('div',"",'bottomSpacing');
+
+    // Form area
+    const formCont = makeElm('div','formCont');
+
+      const mapDiv = makeElm('div','mapDiv','map');
+      const contact = ContactInfo("Contact");
+
+      formCont.append(contact,EmailForm(null,false),mapDiv);
   
-    DOMTarget.append(topSpace,section,midSpace,article,botSpace,EmailForm(null,false));
+    DOMTarget.append(topSpace,section,midSpace,article,botSpace,formCont);
       section.append(secDiv);
         secDiv.append(header1,header2,header3);
       article.append(artDiv);
         artDiv.append(header4,header5);
+
+        const mapTarget = document.querySelector('#map');
+        Map(mapTarget);
 }

@@ -43,4 +43,20 @@ section{
 article{
     height: 440px;
 }
+#map{
+    width: 100%;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+@media (max-width:$breakpoint) {
+    section{
+        display:block
+    }
+    #EmailFormCont{
+        #EmailForm{
+            padding-top:72px;
+        }
+    }
+    
+}
 }

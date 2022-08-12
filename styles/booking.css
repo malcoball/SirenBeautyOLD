@@ -46,4 +46,19 @@
 .BookingApp article {
   height: 440px;
 }
+
+.BookingApp #map {
+  width: 100%;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+@media (max-width: 684px) {
+  .BookingApp section {
+    display: block;
+  }
+  .BookingApp #EmailFormCont #EmailForm {
+    padding-top: 72px;
+  }
+}
 /*# sourceMappingURL=booking.css.map */

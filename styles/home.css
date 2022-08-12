@@ -57,4 +57,35 @@
 .HomeApp #bottomSpacing {
   height: 80px;
 }
+
+.HomeApp .formCont {
+  height: 760px;
+  background-color: #4e4343;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.HomeApp .formCont .inputContainer {
+  height: 100%;
+}
+
+.HomeApp .formCont .inputContainer #EmailFormCont {
+  height: 100%;
+}
+
+.HomeApp .formCont .inputContainer #EmailFormCont #EmailForm {
+  height: 100%;
+}
+
+.HomeApp .formCont #map {
+  height: 100%;
+  width: 320px;
+}
 /*# sourceMappingURL=home.css.map */

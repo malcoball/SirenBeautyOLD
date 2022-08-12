@@ -28,6 +28,14 @@ body {
   max-width: 940px;
 }
 
+#navOutter nav .active {
+  color: #4e4343 !important;
+}
+
+#navOutter nav .linksCont {
+  padding-left: 96px;
+}
+
 #navOutter nav #navCont {
   font-family: "Raleway", sans-serif;
   font-weight: 300;
@@ -47,8 +55,12 @@ body {
   cursor: pointer;
   -ms-flex-item-align: start;
       align-self: flex-start;
-  color: #4e4343;
+  color: rgba(19, 19, 19, 0.5);
   text-decoration: none;
+}
+
+#navOutter nav #navCont a:hover {
+  color: black;
 }
 
 #navOutter nav #navCont div a {
@@ -78,7 +90,7 @@ body {
     width: 100%;
     padding: 0;
   }
-  #navOutter nav #navCont .linksCont .mobileIcon {
+  #navOutter nav #navCont .linksCont .mobile {
     cursor: pointer;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -92,19 +104,20 @@ body {
             align-items: center;
     text-align: center;
   }
-  #navOutter nav #navCont .linksCont .mobileIcon img {
-    -webkit-filter: brightness(20%);
-            filter: brightness(20%);
+  #navOutter nav #navCont .linksCont .mobile img {
+    -webkit-filter: brightness(60%);
+            filter: brightness(60%);
     width: 24px;
   }
-  #navOutter nav #navCont .linksCont .mobileIcon a {
+  #navOutter nav #navCont .linksCont .mobile a {
     padding-right: 0;
   }
-}
-
-@media (min-width: 684px) {
-  nav .linksCont {
-    padding-left: 96px;
+  #navOutter nav #navCont .linksCont .active img {
+    -webkit-filter: invert(1);
+            filter: invert(1);
+  }
+  #navOutter nav #navCont .linksCont .active a {
+    color: black;
   }
 }
 
@@ -142,7 +155,7 @@ body {
 
 #EmailFormCont form .input {
   max-width: 960px;
-  border: 1px solid #131313;
+  border: 1px solid rgba(19, 19, 19, 0.5);
   border-bottom: 1px solid white;
   margin-bottom: 16px;
   padding-bottom: 4px;
@@ -165,7 +178,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 50%;
+  width: 100%;
 }
 
 #EmailFormCont form button {
@@ -187,13 +200,13 @@ body {
 }
 
 #EmailFormCont form, #EmailFormCont .col1 {
-  background-color: #131313;
+  background-color: rgba(19, 19, 19, 0.5);
 }
 
 #EmailFormCont form .input, #EmailFormCont .col1 .input {
-  background-color: #131313;
+  background-color: rgba(19, 19, 19, 0.5);
   color: white;
-  border-color: #131313;
+  border-color: rgba(19, 19, 19, 0.5);
   border-bottom-color: white;
 }
 
@@ -317,6 +330,125 @@ footer #imageDiv a {
 
 footer h5:nth-of-type(2) {
   padding-bottom: 24px;
+}
+
+#map {
+  width: 320px;
+  height: 320px;
+}
+
+.contactDiv {
+  height: 100%;
+  color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contactDiv .contactContainer {
+  margin: auto;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.contactDiv .contactContainer h3 {
+  -webkit-box-flex: 0.5;
+      -ms-flex-positive: 0.5;
+          flex-grow: 0.5;
+  font-family: "Playfair Display", serif;
+  text-transform: uppercase;
+  padding-top: 120px;
+}
+
+.contactDiv .contactContainer .contDiv {
+  padding-left: 8px;
+  margin: 8px 0;
+}
+
+.contactDiv .contactContainer .contDiv .topDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contactDiv .contactContainer .contDiv span {
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contactDiv .contactContainer .contDiv span img {
+  -webkit-filter: brightness(0.25);
+          filter: brightness(0.25);
+  color: black;
+  width: 12px;
+  height: 12px;
+}
+
+.contactDiv .contactContainer .contDiv h4 {
+  padding-left: 8px;
+}
+
+@media (max-width: 684px) {
+  .formCont {
+    padding-top: 214px;
+    display: inline !important;
+  }
+  .formCont #map {
+    width: 100% !important;
+    height: 320px !important;
+  }
+}
+
+@-webkit-keyframes screenCover {
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes screenCover {
+  50% {
+    opacity: 1;
+  }
+}
+
+#screenCover {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  -webkit-animation-name: screenCover;
+          animation-name: screenCover;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  opacity: 0;
+  background-color: white;
 }
 
 i {

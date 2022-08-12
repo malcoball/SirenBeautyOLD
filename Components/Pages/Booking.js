@@ -1,5 +1,6 @@
 import makeElm from "../MakeElm.js";
 import EmailForm from "../Elements/EmailForm.js";
+import Map from "../Elements/Map.js";
 export default function Booking(DOMTarget){
     const section = makeElm('section');
       const secLeftDiv = makeElm('div','leftDiv');
@@ -9,17 +10,20 @@ export default function Booking(DOMTarget){
         const para3 = makeElm('a',"","",'sirenbeautynottingham@gmail.com');
         para3.href = "_mailto : sirenbeautynottingham@gmail.com";
       const secRightDiv = makeElm('div','rightDiv');
-        const emailForm = EmailForm(false,"col2");
+        const emailForm = EmailForm(false,null,"col2");
     const midSpace = makeElm('div','midSpace');
      midSpace.style.backgroundImage = 'url("Images/cardImage.jpg")';
     const article = makeElm('article');
       // article.style.backgroundImage = 'url("Images/map.jpg")';
       const mapOut = makeElm('div',"",'map');
+
   
-  
-    DOMTarget.append(section,midSpace,article);
+    DOMTarget.append(section,article);
       section.append(secLeftDiv,secRightDiv);
         secLeftDiv.append(title,para1,para2,para3);
         secRightDiv.append(emailForm);
       article.append(mapOut);
+
+      const mapTarget = document.querySelector('#map');
+        Map(mapTarget);
   }

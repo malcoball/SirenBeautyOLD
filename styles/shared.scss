@@ -25,6 +25,12 @@ body{
     margin: 0 auto;
     justify-content: center;
     max-width: 940px;
+    .active{
+        color: $col2 !important;
+    }
+    .linksCont{
+        padding-left: 96px;
+    }
     #navCont{
         font-family: $font2;
         font-weight: 300;
@@ -37,8 +43,11 @@ body{
         a{
             cursor: pointer;
             align-self: flex-start;
-            color: $col2;
+            color: $col3;
             text-decoration: none;
+        }
+        a:hover{
+            color:black;
         }
         div{
             a{
@@ -67,18 +76,27 @@ body{
                     justify-content: space-around;
                     width: 100%;
                     padding: 0;
-                    .mobileIcon{
+                    .mobile{
                         cursor: pointer;
                         display: flex;
                         flex-direction: column-reverse;
                         align-items: center;
                         text-align: center;
                         img{
-                        filter: brightness(20%);
+                        filter: brightness(60%);
+                        // filter:invert(1);
                         width: 24px;
                         }
                         a{
                             padding-right: 0;
+                        }
+                    }
+                    .active{
+                        img{
+                            filter: invert(1);
+                        }
+                        a{
+                            color: black;
                         }
                     }
                 }
@@ -86,14 +104,7 @@ body{
         }
     }
 }
-@media (min-width:$breakpoint) { // Desktop view
-    nav{
-        
-        .linksCont{
-            padding-left: 96px;
-        }
-    }
-}
+
 #topSpacing{
     height: 560px;
     background-image: url("Images/background.jpg");
@@ -141,7 +152,7 @@ body{
         #btnDiv{
             display:flex;
             justify-content: center;
-            width: 50%;
+            width: 100%;
         }
         button{
             border-radius: 4px;
@@ -278,9 +289,87 @@ footer{
         padding-bottom: 24px;
     }
 }
-
+#map{
+    width: 320px;
+    height: 320px;
+    
+}
+.contactDiv{
+    height: 100%;
+    color: $col1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .contactContainer{
+        margin: auto;
+        height:80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        h3{
+            flex-grow: 0.5;
+            font-family: $font1;
+            text-transform: uppercase;
+            padding-top: 120px;
+        }
+        .contDiv{
+        padding-left: 8px;
+        margin: 8px 0;
+        .topDiv{
+            display:flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        span{
+            width:  24px;
+            height: 24px;
+            background-color: $col1;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img{
+                filter: brightness(0.25);
+                color: black;
+                width:  12px;
+                height: 12px;
+            }
+        }
+        h4{
+            padding-left: 8px;
+        }
+        }
+    } 
+}
+@media (max-width:$breakpoint){
+.formCont{
+    padding-top: 214px;
+    display: inline !important;
+    #map{
+        width:100% !important;
+        height: 320px !important;
+    }
+}
+}
 
 // Global rules
+@keyframes screenCover{
+    // from{background-color: rgba(255, 255, 255, 0);}
+    
+    50%{opacity: 1;}
+    // to{background-color: rgb(255, 255, 255,0);}
+}
+#screenCover{
+    width:100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 2;
+    top: 0; left: 0;
+    animation-name: screenCover;
+    animation-duration: 1s;
+    opacity: 0;
+    background-color: $col5;
+}
 i{
     font-family: $font1;
     font-weight: 400;

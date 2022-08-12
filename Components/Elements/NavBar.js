@@ -1,7 +1,7 @@
 import makeElm from "../MakeElm.js";
 
-function mobileLinks (name,imageSrc){
-  const out = makeElm('div','mobileIcon navLink');
+function mobileLinks (name,imageSrc,idName){
+  const out = makeElm('div','mobile navLink',idName);
     const text = makeElm('a','mobile',"",name);
     const img = makeElm('img','mobile',"");
     img.src = imageSrc;
@@ -33,13 +33,13 @@ export default function Nav(DOMTarget){
             // Mobile
             midDivLinks.push(mobileLinks('Email','Images/NavIcons/Mail.png'));
             midDivLinks[midDivLinks.length-1].DOMTarget = 'Mail';
-            midDivLinks.push(mobileLinks('Home','Images/NavIcons/Home.png'));
+            midDivLinks.push(mobileLinks('Home','Images/NavIcons/Home.png','navHome'));
             midDivLinks[midDivLinks.length-1].DOMTarget = 'Home';
-            midDivLinks.push(mobileLinks('Services','Images/NavIcons/Mail.png'));
+            midDivLinks.push(mobileLinks('Services','Images/NavIcons/Mail.png','navServ'));
             midDivLinks[midDivLinks.length-1].DOMTarget = 'Services';
-            midDivLinks.push(mobileLinks('Portfolio','Images/NavIcons/Port.png'));
+            midDivLinks.push(mobileLinks('Portfolio','Images/NavIcons/Port.png','navPort'));
             midDivLinks[midDivLinks.length-1].DOMTarget = 'Portfolio';
-            midDivLinks.push(mobileLinks('Booking','Images/NavIcons/Book.png'));
+            midDivLinks.push(mobileLinks('Booking','Images/NavIcons/Book.png','navBook'));
             midDivLinks[midDivLinks.length-1].DOMTarget = 'How to book';
             
             
