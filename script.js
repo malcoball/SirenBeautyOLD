@@ -44,7 +44,7 @@ function makePage(title,active){
   if (title === "Mail"){
     alert("send email pls");
   } else {
-
+  window.scrollTo(0,0);
   changePage(title);
   Navbar(out);
   navLinks();

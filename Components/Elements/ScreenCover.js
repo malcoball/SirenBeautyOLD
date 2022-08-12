@@ -1,10 +1,11 @@
 import makeElm from "../MakeElm.js";
 
 export default function ScreenCover(){
+    const fadeTime = 1000; // How long the screencover lasts. The script.js needs to be changed to match though
     const out = makeElm('div',"",'screenCover');
-    console.log("bayyuuumm");
+    out.style.animationDuration = fadeTime / 1000 + "s";
     setTimeout(()=>{
         out.remove()
-    },1000);
+    },fadeTime);
     return out;
 }
