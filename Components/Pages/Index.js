@@ -5,8 +5,9 @@ import ContactInfo from "../Elements/ContactInfo.js";
 
 export default function Index(DOMTarget){
     const topSpace = makeElm('div',"",'topSpacing');
-    topSpace.style.backgroundImage = 'url("Images/cardImage.jpg")';
-  
+    // topSpace.style.backgroundImage = 'url("Images/cardImage.jpg")';
+    topSpace.style.backgroundImage = 'url("Images/portBackground.jpg")';
+
     const section = makeElm('section',"text-primary col1 home");
       const secDiv = makeElm('div',"innerDiv col1");
         const header1 = makeElm('h1',"","",'Welcome to Siren Beauty Nottingham');
