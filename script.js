@@ -79,6 +79,6 @@ function makePage(title,active){
   }
 }
 function init(){
-  makePage("Services",'navHome');
+  makePage("Home",'navHome');
 }
 init();

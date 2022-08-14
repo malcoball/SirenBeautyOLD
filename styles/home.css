@@ -7,6 +7,7 @@
   font-family: "Playfair Display", serif;
   font-size: 4.8em;
   padding: 48px 0 32px 0;
+  text-shadow: 2px 2px 2px black;
 }
 
 .HomeApp section h5 {

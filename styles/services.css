@@ -15,6 +15,7 @@
 
 .ServicesApp article {
   position: relative;
+  padding-bottom: 36px;
   bottom: 24px;
 }
 
