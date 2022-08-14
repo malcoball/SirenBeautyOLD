@@ -1,0 +1,246 @@
+#navOutter {
+  position: fixed;
+  width: 100vw;
+  background-color: white;
+}
+
+#navOutter nav {
+  margin: 0 auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 940px;
+}
+
+#navOutter nav #navCont {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 0.9em;
+  border-top: 1px solid black;
+  margin: 28px 0 31px 24px;
+  padding: 16px 0 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+#navOutter nav #navCont a {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  color: black;
+  text-decoration: none;
+}
+
+#navOutter nav #navCont div {
+  padding-left: 96px;
+}
+
+#navOutter nav #navCont div a {
+  padding-right: 24px;
+}
+
+#topSpacing {
+  height: 560px;
+  background-image: url("Images/background.jpg");
+  background-position: center;
+  background-attachment: fixed;
+}
+
+section {
+  padding-bottom: 122px;
+}
+
+section h1 {
+  text-transform: uppercase;
+  font-family: "Playfair Display", serif;
+  font-size: 4.8em;
+  padding: 48px 0 32px 0;
+}
+
+section h5 {
+  padding-bottom: 36px;
+}
+
+section h5:nth-of-type(2) {
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+#midSpacing {
+  height: 80px;
+}
+
+article h5:nth-of-type(1) {
+  padding: 48px 0;
+  margin-bottom: 0;
+}
+
+article h5:nth-of-type(2) {
+  font-size: 0.95em;
+  padding-bottom: 80px;
+  margin-bottom: 0;
+}
+
+#bottomSpacing {
+  height: 80px;
+}
+
+form {
+  background-color: #131313;
+  padding: 0 24px 200px 24px;
+  text-align: left;
+  min-height: 616px;
+}
+
+form h2 {
+  padding-bottom: 36px;
+  padding-top: 112px;
+  font-family: "Playfair Display", serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+}
+
+form #inputRequired {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+form #inputRequired div:nth-of-type(1) {
+  padding-right: 32px;
+}
+
+form .input {
+  max-width: 960px;
+  background-color: #131313;
+  color: white;
+  border: 1px solid #131313;
+  border-bottom: 1px solid white;
+  margin-bottom: 16px;
+  padding-bottom: 4px;
+}
+
+form .input:hover {
+  border-color: white;
+}
+
+form .input:focus {
+  border-color: white;
+  -webkit-box-shadow: 0px -1px 3px white;
+          box-shadow: 0px -1px 3px white;
+  outline: none;
+}
+
+form .single {
+  width: 445px;
+}
+
+form #btnDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
+}
+
+form button {
+  border-radius: 4px;
+  margin: 12px;
+  padding: 6px 12px;
+  text-align: center;
+  border: none;
+  background-color: white;
+  font-style: italic;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+form button:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-box-shadow: 0px 0px 2px white;
+          box-shadow: 0px 0px 2px white;
+  background-color: #b3b3b3;
+  color: white;
+}
+
+footer {
+  font-family: "Playfair Display", serif;
+}
+
+footer h4 {
+  padding-top: 24px;
+  font-size: 1.25em;
+}
+
+footer h5 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 0.8em;
+}
+
+footer h5:nth-of-type(1) {
+  padding-top: 24px;
+}
+
+footer #imageDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 28px;
+  padding-bottom: 48px;
+}
+
+footer #imageDiv a {
+  margin: 0 12px;
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+footer #imageDiv #face {
+  background-image: url("./Images/facebook.png");
+}
+
+footer #imageDiv #inst {
+  background-image: url("./Images/instagram.png");
+}
+
+footer h5:nth-of-type(2) {
+  padding-bottom: 24px;
+}
+
+i {
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+}
+
+.innerDiv {
+  max-width: 960px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.col1 {
+  background-color: black;
+  color: white;
+}
+
+.col2 {
+  background-color: white;
+  color: black;
+}
+/*# sourceMappingURL=style.css.map */

@@ -146,6 +146,12 @@ body{
     
             outline: none;
         }
+        .required{
+            color: red !important;
+        }
+        .required:focus{
+            color: $col1 !important;
+        }
         .single{
             width: 445px;
         }

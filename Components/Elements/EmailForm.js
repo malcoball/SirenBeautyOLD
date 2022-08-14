@@ -1,5 +1,24 @@
 import makeElm from "../MakeElm.js";
 
+function requiredInput(target,check){
+  target.addEventListener("blur",()=>{
+    const parent = target.parentNode;
+    let valid = true;
+    if (check === "name"){
+      if (target.value === "") valid = false;
+    } else 
+    if (check === "email"){
+      if (target.value.indexOf("@") === -1) valid = false;
+    }
+    if (valid === false) parent.classList.add('required');
+  })
+
+  target.addEventListener("focus",()=>{
+    const parent = target.parentNode;
+    parent.classList.remove('required');
+  })
+}
+
 export default function EmailForm(DOMTarget,addToDOM = true, color = "col1"){
     const outterDiv = makeElm('div',`${color} inputContainer`);
       const innerDiv = makeElm('div',`innerDiv ${color} inputLeft`,'EmailFormCont');
@@ -13,11 +32,13 @@ export default function EmailForm(DOMTarget,addToDOM = true, color = "col1"){
                 const header11 = makeElm('h5',"","",'Name *');
                 const input11  = makeElm('input','input');
                 input11.placeholder = "required";
-              // Email input
-              const div21 = makeElm('div','inputArea');
+                // Email input
+                const div21 = makeElm('div','inputArea');
                 const header21 = makeElm('h5',"","",'Email *');
                 const input21 = makeElm('input','input');
                 input21.placeholder = "required";
+                requiredInput(input11,"name");
+                requiredInput(input21,"email");
             // Subject input
             const div31 = makeElm('div','inputArea');
               const header31 = makeElm('h5',"","",'Subject');

@@ -167,6 +167,14 @@ body {
   outline: none;
 }
 
+#EmailFormCont form .required {
+  color: red !important;
+}
+
+#EmailFormCont form .required:focus {
+  color: white !important;
+}
+
 #EmailFormCont form .single {
   width: 445px;
 }
