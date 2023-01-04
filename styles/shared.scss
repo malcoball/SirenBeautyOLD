@@ -106,7 +106,8 @@ body{
 }
 
 #topSpacing{
-    height: 560px;
+    filter: invert();
+    height: 240px;
     background-image: url("Images/background.jpg");
     background-position: center;
     background-attachment: fixed;

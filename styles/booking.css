@@ -1,17 +1,12 @@
 .BookingApp section {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   margin-top: 120px;
-  color: #4e4343;
+  color: rgb(78, 67, 67);
 }
-
 .BookingApp section .leftDiv {
   text-align: center;
 }
-
 .BookingApp section .leftDiv h3 {
   font-family: "Playfair Display", serif;
   font-weight: 400;
@@ -19,40 +14,32 @@
   text-transform: uppercase;
   padding-bottom: 24px;
 }
-
 .BookingApp section .leftDiv p, .BookingApp section .leftDiv a {
-  font-size: .95em;
+  font-size: 0.95em;
   font-family: "Raleway", sans-serif;
-  color: #4e4343;
+  color: rgb(78, 67, 67);
   text-decoration: none;
 }
-
 .BookingApp section .leftDiv p {
   padding-bottom: 12px;
 }
-
 .BookingApp section .rightDiv form h2 {
   display: none;
 }
-
 .BookingApp section .rightDiv #btnDiv {
   margin: 0 auto;
 }
-
 .BookingApp .midSpace {
   height: 500px;
 }
-
 .BookingApp article {
   height: 440px;
 }
-
 .BookingApp #map {
   width: 100%;
   border-left: 1px solid black;
   border-right: 1px solid black;
 }
-
 @media (max-width: 684px) {
   .BookingApp section {
     display: block;
@@ -60,5 +47,4 @@
   .BookingApp #EmailFormCont #EmailForm {
     padding-top: 72px;
   }
-}
-/*# sourceMappingURL=booking.css.map */
+}/*# sourceMappingURL=booking.css.map */

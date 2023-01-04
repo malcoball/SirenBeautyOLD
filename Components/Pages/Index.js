@@ -6,7 +6,10 @@ import ContactInfo from "../Elements/ContactInfo.js";
 export default function Index(DOMTarget){
     const topSpace = makeElm('div',"",'topSpacing');
     // topSpace.style.backgroundImage = 'url("Images/cardImage.jpg")';
-    topSpace.style.backgroundImage = 'url("Images/portBackground.jpg")';
+    topSpace.style.backgroundImage = 'url("Images/background2.jpg")';
+    const topSpace2 = makeElm('div','','topSpacingBehind');
+    topSpace2.style.backgroundColor = "blue";
+    
 
     const section = makeElm('section',"text-primary col1 home");
       const secDiv = makeElm('div',"innerDiv col1");
@@ -17,8 +20,8 @@ export default function Index(DOMTarget){
     const midSpace = makeElm('div',"",'midSpacing');
     const article = makeElm('article',"col1");
       const artDiv = makeElm('div','innerDiv col1');
-        const header4 = makeElm('h5',"","","<i>We're waiting For You!</i>");
-        const header5 = makeElm('h5',"","",'Fridays 10 till 8');
+        // const header4 = makeElm('h5',"","","<i>We're waiting For You!</i>");
+        // const header5 = makeElm('h5',"","",'Fridays 10 till 8');
   
     const botSpace = makeElm('div',"",'bottomSpacing');
 

@@ -1,7 +1,6 @@
 .HomeApp section {
   padding-bottom: 122px;
 }
-
 .HomeApp section h1 {
   text-transform: uppercase;
   font-family: "Playfair Display", serif;
@@ -9,23 +8,19 @@
   padding: 48px 0 32px 0;
   text-shadow: 2px 2px 2px black;
 }
-
 .HomeApp section h5 {
   padding-bottom: 36px;
 }
-
 .HomeApp section h5:nth-of-type(2) {
   font-size: 1em;
   font-weight: 400;
   line-height: 1.8;
 }
-
 @media (max-width: 684px) {
   .HomeApp section h1 {
     font-size: 2.4em;
   }
 }
-
 @media (max-width: 684px) {
   .HomeApp #midSpacing {
     height: 24px !important;
@@ -34,59 +29,42 @@
     height: 24px !important;
   }
 }
-
 .HomeApp #midSpacing {
   height: 80px;
 }
-
 .HomeApp article {
   max-width: 1700px;
   margin: auto;
 }
-
 .HomeApp article h5:nth-of-type(1) {
   padding: 48px 0;
   margin-bottom: 0;
 }
-
 .HomeApp article h5:nth-of-type(2) {
   font-size: 0.95em;
   padding-bottom: 80px;
   margin-bottom: 0;
 }
-
 .HomeApp #bottomSpacing {
   height: 80px;
 }
-
 .HomeApp .formCont {
   height: 760px;
-  background-color: #4e4343;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  background-color: rgb(78, 67, 67);
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
-
 .HomeApp .formCont .inputContainer {
   height: 100%;
 }
-
 .HomeApp .formCont .inputContainer #EmailFormCont {
   height: 100%;
 }
-
 .HomeApp .formCont .inputContainer #EmailFormCont #EmailForm {
   height: 100%;
 }
-
 .HomeApp .formCont #map {
   height: 100%;
   width: 320px;
-}
-/*# sourceMappingURL=home.css.map */
+}/*# sourceMappingURL=home.css.map */
