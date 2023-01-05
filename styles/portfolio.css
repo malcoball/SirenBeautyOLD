@@ -55,7 +55,7 @@
   height: 720px;
   border-radius: 50%;
 }
-@media (max-width: 684px) {
+@media (max-width: 576px) {
   .PortfolioApp section {
     background-color: rgba(0, 0, 0, 0.5);
   }

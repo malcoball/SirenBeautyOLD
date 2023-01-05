@@ -40,7 +40,7 @@
   border-left: 1px solid black;
   border-right: 1px solid black;
 }
-@media (max-width: 684px) {
+@media (max-width: 576px) {
   .BookingApp section {
     display: block;
   }

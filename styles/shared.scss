@@ -9,7 +9,7 @@ body{
     // Should be set to the same height as navbar pretty much
     padding-bottom: 97.6px;
 }
-@media (max-width:$breakpoint) {
+@media (max-width:$mobBreakPoint) {
     #navPush{
         padding-bottom: 72px;
     }
@@ -60,7 +60,7 @@ body{
     }
     }
 }
-@media (max-width:$breakpoint) { // Mobile view
+@media (max-width:$mobBreakPoint) { // Mobile view
 #navOutter{
         nav{
             .mobile{
@@ -229,7 +229,7 @@ body{
         }
     }
 }
-@media (max-width:$breakpoint) { // Mobile view
+@media (max-width:$mobBreakPoint) { // Mobile view
     #EmailFormCont{
         .inputRequired{
             flex-direction: column;
@@ -348,7 +348,7 @@ footer{
         }
     } 
 }
-@media (max-width:$breakpoint){
+@media (max-width:$mobBreakPoint){
 .formCont{
     padding-top: 214px;
     display: inline !important;

@@ -48,7 +48,7 @@ article{
     border-left: 1px solid black;
     border-right: 1px solid black;
 }
-@media (max-width:$breakpoint) {
+@media (max-width:$mobBreakPoint) {
     section{
         display:block
     }

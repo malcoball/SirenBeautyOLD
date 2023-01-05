@@ -63,7 +63,7 @@ background{
 
     }
 }
-@media (max-width:$breakpoint){
+@media (max-width:$mobBreakPoint){
     section{
         background-color: $col4;
     }
