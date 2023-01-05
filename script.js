@@ -3,6 +3,7 @@ import Navbar from './Components/Elements/NavBar.js';
 import OpenEmail from './Components/OpenEmail.js';
 import ScreenCover from './Components/Elements/ScreenCover.js';
 import Footer from './Components/Elements/Footer.js';
+import { LoadPage, SavePage } from './Components/SavePage.js';
 
 const body = document.querySelector('body');
 const out = document.querySelector('#app');
@@ -71,6 +72,8 @@ function makePage(title,active){
   }
   Footer(out);
 
+  SavePage(title);
+
   const classTargets = document.querySelectorAll('#'+active);
   classTargets.forEach(element => {
     if (element.classList !== null) element.classList.toggle("active");
@@ -79,6 +82,8 @@ function makePage(title,active){
   }
 }
 function init(){
-  makePage("Home",'navHome');
+  let lastPage = LoadPage();
+  if (lastPage == null) lastPage = "Home";
+  makePage(lastPage,'navHome');
 }
 init();
