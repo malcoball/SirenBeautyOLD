@@ -18,7 +18,11 @@ section{
 }
 article{
     // This is the mobile design by default
-    // background-color: red;
+    // The desktop design comes in with media queries
+
+    position:relative; top: -12px;
+    padding: 12px 0 96px 0;
+
     .cardDiv{
         text-align: center;
         display:flex;
@@ -54,13 +58,21 @@ article{
             
         }
     }
+    hr{
+        position: relative;
+        top: 72px;
+        width:80vw;
+        margin: auto;
+        color: black;
+    }
 }
-@media (min-width:$smlBreakPoint){
+@media (min-width:$mobBreakPoint){
     article{
         .cardDiv{
+            // transition: 0.2s;
             width: 90vw;
             margin:auto;
-            display: grid; grid-template-columns: 45% 45%; grid-gap:36px 0;
+            display: grid; grid-template-columns: 90%; grid-gap:36px 0px;
             align-items: start; justify-content: center;
             .cardContainer{
                 width:95%;
@@ -81,13 +93,13 @@ article{
                     width: 240px; min-height: 360px;
                     display:flex; align-items: center;
                     .rightDivImage{
-                        width: 11vw;
+                        width: 186px;
                         aspect-ratio: 1;
                         background-position: center; background-repeat: no-repeat;
                         background-size: cover;
                         
                         border-radius: 50%; 
-                        box-shadow: inset 0px 0px 64px 16px rgba(0, 0, 0, 1);
+                        box-shadow: inset 0px 0px 64px 16px rgba(253,216,239,0.5);
                     }
                 }
             }
@@ -96,11 +108,22 @@ article{
     
 }
 @media (min-width:$mdBreakPoint){
-    // display: grid; grid-template-columns: 33% 33% 33%; grid-gap:36px 0;
-    .cardDiv{
-        grid-template-columns: 33% 33% 33%;
+    article{
+        .cardDiv{
+            width:100vw;
+            grid-template-columns: repeat(2, 48%);
+            grid-gap:36px 0px;
+        }
     }
-
+}
+@media (min-width:$xxlBreakPoint){
+    article{
+        .cardDiv{
+            width:90vw;
+            grid-template-columns: repeat(2, 45%);
+            grid-gap:36px 0px;
+        }
+    }
 }
 
 

@@ -4,9 +4,9 @@ export default function ServiceCard(titleText,subHeadText,paraText,imageSrc){
     const mainCon = makeElm('div','cardContainer col2');
       const leftCon = makeElm('div','leftDiv innerCardCont');
         const leftConSpace = makeElm('div','leftDivInner');
-          const title = makeElm('h3',"",'title',titleText);
+          const title = makeElm('h3',"col3",'title',titleText);
           const subHead = makeElm('h5',"",'subHead',subHeadText);
-          const para    = makeElm('p',"","",paraText);
+          const para    = makeElm('p',"col3","",paraText);
       const midCon = makeElm('div','midDiv');
       const rightCon = makeElm('div','rightDiv innerCardCont');
         const backImage = makeElm('div','rightDivImage');

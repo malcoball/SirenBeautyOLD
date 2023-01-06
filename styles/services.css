@@ -11,6 +11,11 @@
   font-weight: 400;
   font-family: "Raleway", sans-serif;
 }
+.ServicesApp article {
+  position: relative;
+  top: -12px;
+  padding: 12px 0 96px 0;
+}
 .ServicesApp article .cardDiv {
   text-align: center;
   display: flex;
@@ -44,13 +49,20 @@
 .ServicesApp article .cardDiv .cardContainer .leftDivInner p {
   padding: 8px;
 }
-@media (min-width: 768px) {
+.ServicesApp article hr {
+  position: relative;
+  top: 72px;
+  width: 80vw;
+  margin: auto;
+  color: black;
+}
+@media (min-width: 576px) {
   .ServicesApp article .cardDiv {
     width: 90vw;
     margin: auto;
     display: grid;
-    grid-template-columns: 45% 45%;
-    grid-gap: 36px 0;
+    grid-template-columns: 90%;
+    grid-gap: 36px 0px;
     align-items: start;
     justify-content: center;
   }
@@ -75,17 +87,26 @@
     align-items: center;
   }
   .ServicesApp article .cardDiv .cardContainer .rightDiv .rightDivImage {
-    width: 11vw;
+    width: 186px;
     aspect-ratio: 1;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 50%;
-    box-shadow: inset 0px 0px 64px 16px rgb(0, 0, 0);
+    box-shadow: inset 0px 0px 64px 16px rgba(253, 216, 239, 0.5);
   }
 }
 @media (min-width: 992px) {
-  .ServicesApp .cardDiv {
-    grid-template-columns: 33% 33% 33%;
+  .ServicesApp article .cardDiv {
+    width: 100vw;
+    grid-template-columns: repeat(2, 48%);
+    grid-gap: 36px 0px;
+  }
+}
+@media (min-width: 1400px) {
+  .ServicesApp article .cardDiv {
+    width: 90vw;
+    grid-template-columns: repeat(2, 45%);
+    grid-gap: 36px 0px;
   }
 }/*# sourceMappingURL=services.css.map */

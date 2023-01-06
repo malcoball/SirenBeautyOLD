@@ -6,7 +6,7 @@ body {
   padding-bottom: 97.6px;
 }
 
-@media (max-width: 684px) {
+@media (max-width: 576px) {
   #navPush {
     padding-bottom: 72px;
   }
@@ -55,7 +55,7 @@ body {
   display: none;
 }
 
-@media (max-width: 684px) {
+@media (max-width: 576px) {
   #navOutter nav .mobile {
     display: block;
   }
@@ -93,8 +93,8 @@ body {
   }
 }
 #topSpacing {
-  height: 560px;
-  background-image: url("Images/background.jpg");
+  height: 240px;
+  background-image: url("Images/background2.jpg");
   background-position: center;
   background-attachment: fixed;
 }
@@ -203,7 +203,7 @@ body {
   color: white;
 }
 
-@media (max-width: 684px) {
+@media (max-width: 576px) {
   #EmailFormCont .inputRequired {
     flex-direction: column;
   }
@@ -315,7 +315,7 @@ footer h5:nth-of-type(2) {
   padding-left: 8px;
 }
 
-@media (max-width: 684px) {
+@media (max-width: 576px) {
   .formCont {
     padding-top: 214px;
     display: inline !important;
@@ -367,4 +367,9 @@ i {
 .col2 {
   background-color: white;
   color: rgb(78, 67, 67);
+}
+
+.col3 {
+  background-color: white;
+  color: #222;
 }/*# sourceMappingURL=shared.css.map */
