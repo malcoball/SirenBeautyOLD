@@ -107,7 +107,7 @@ body{
 
 #topSpacing{
     // filter: invert();
-    height: 240px;
+    height: 120px;
     background-image: url("Images/background2.jpg");
     background-position: center;
     background-attachment: fixed;
@@ -357,6 +357,95 @@ footer{
         height: 320px !important;
     }
 }
+}
+
+// Image carousel
+.carouselCont{
+    width:50vw;
+    margin: auto;
+    padding:48px 0;
+    background-color: $col1;
+    
+    .activeDiv{
+        .carouselImg{
+            position: relative;
+            display:inline-block;
+            width: 100%; aspect-ratio: 1.5;
+            // border:1px solid black;
+            // background-color: #774e32;
+            
+            .carouselImgInner{
+                display:flex;
+                height: 100%;
+                .imgDiv{
+                    box-shadow: 0px 0px 24px 24px inset rgba(238, 204, 177, 0.4);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+
+                    margin:6px; 
+                    border-radius: 12px;
+                    flex-grow: 0.5; aspect-ratio: 1;
+                }
+                .textDiv{
+                    margin-left:8px;
+                    align-self: end;
+                    max-width: 200px;
+                    h4{
+                        text-transform: capitalize;
+                        font-size:2rem;
+                    }
+                    p{
+                        font-size:1rem;
+                    }
+                }
+            }
+        }
+        .left{
+            position:absolute;
+            z-index: -1;
+        }
+        .right{
+            position:absolute;
+            z-index: -1;
+        }
+        .hide{
+            visibility: hidden;
+        }
+        .fadeOut{
+            animation-name: fadeOutAnim;
+            animation-duration: 4s;
+        }
+        @keyframes fadeOutAnim{
+            from{opacity: 1;}
+            to{opacity: 0;}
+        }
+        .swipeLeft{
+            z-index: 2;
+            // left: 0 !important;
+            transition: 4s;
+        }
+    }
+    .imagePreviewCont{
+        margin-top:36px;
+        display: flex;
+        justify-content: space-around;
+        .carouselThumbnail{
+            border: 1px solid rgba(136, 136, 136, 0.5);
+            width:11%;
+            aspect-ratio: 1;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        .active{
+            border-color: rgb(0, 0, 0) !important;
+        }
+        
+    }
+    button{
+        display:none;
+    }
 }
 
 // Global rules

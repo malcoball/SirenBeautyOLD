@@ -93,7 +93,7 @@ body {
   }
 }
 #topSpacing {
-  height: 240px;
+  height: 120px;
   background-image: url("Images/background2.jpg");
   background-position: center;
   background-attachment: fixed;
@@ -325,11 +325,107 @@ footer h5:nth-of-type(2) {
     height: 320px !important;
   }
 }
+.carouselCont {
+  width: 50vw;
+  margin: auto;
+  padding: 48px 0;
+  background-color: white;
+}
+.carouselCont .activeDiv .carouselImg {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  aspect-ratio: 1.5;
+}
+.carouselCont .activeDiv .carouselImg .carouselImgInner {
+  display: flex;
+  height: 100%;
+}
+.carouselCont .activeDiv .carouselImg .carouselImgInner .imgDiv {
+  box-shadow: 0px 0px 24px 24px inset rgba(238, 204, 177, 0.4);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 6px;
+  border-radius: 12px;
+  flex-grow: 0.5;
+  aspect-ratio: 1;
+}
+.carouselCont .activeDiv .carouselImg .carouselImgInner .textDiv {
+  margin-left: 8px;
+  align-self: end;
+  max-width: 200px;
+}
+.carouselCont .activeDiv .carouselImg .carouselImgInner .textDiv h4 {
+  text-transform: capitalize;
+  font-size: 2rem;
+}
+.carouselCont .activeDiv .carouselImg .carouselImgInner .textDiv p {
+  font-size: 1rem;
+}
+.carouselCont .activeDiv .left {
+  position: absolute;
+  z-index: -1;
+}
+.carouselCont .activeDiv .right {
+  position: absolute;
+  z-index: -1;
+}
+.carouselCont .activeDiv .hide {
+  visibility: hidden;
+}
+.carouselCont .activeDiv .fadeOut {
+  -webkit-animation-name: fadeOutAnim;
+          animation-name: fadeOutAnim;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+@-webkit-keyframes fadeOutAnim {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeOutAnim {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.carouselCont .activeDiv .swipeLeft {
+  z-index: 2;
+  transition: 4s;
+}
+.carouselCont .imagePreviewCont {
+  margin-top: 36px;
+  display: flex;
+  justify-content: space-around;
+}
+.carouselCont .imagePreviewCont .carouselThumbnail {
+  border: 1px solid rgba(136, 136, 136, 0.5);
+  width: 11%;
+  aspect-ratio: 1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.carouselCont .imagePreviewCont .active {
+  border-color: rgb(0, 0, 0) !important;
+}
+.carouselCont button {
+  display: none;
+}
+
 @-webkit-keyframes screenCover {
   50% {
     opacity: 1;
   }
 }
+
 @keyframes screenCover {
   50% {
     opacity: 1;

@@ -1,12 +1,13 @@
 import makeElm from "../../MakeElm.js";
 import Map from "../../Elements/Map.js"
 import Section from "./Section.js";
-import Article from "./Article.js";
 import FormCont from "./FormCont.js";
+import ImageCarousel from "../../Elements/ImageCarousel/ImageCarousel.js";
 
 
 export default function Index(DOMTarget){
-    const topSpace = makeElm('div','','topSpacing');;
+    const topSpace = makeElm('div','','topSpacing');
+    const imageCarousel = ImageCarousel();
     const section = Section();
     const midSpace = makeElm('div',"",'midSpacing');
     const botSpace = makeElm('div',"",'bottomSpacing');
@@ -14,7 +15,7 @@ export default function Index(DOMTarget){
     // Form area
     const formCont = FormCont();
   
-    DOMTarget.append(topSpace,section,midSpace,botSpace,formCont);
+    DOMTarget.append(topSpace,section,midSpace,imageCarousel,botSpace,formCont);
 
         const mapTarget = document.querySelector('#map');
         Map(mapTarget);
