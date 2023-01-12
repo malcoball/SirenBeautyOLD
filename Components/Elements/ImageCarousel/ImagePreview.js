@@ -11,18 +11,14 @@ const ImagePreview = (imgSrcs = [],active = 0)=>{
         let out = {src : imgSrcs[i].src, active : false};
         if (active == i) {
             out.active = true;
-            console.log('matched')
         }
         imgs.push(out);
     }
 
-    // const img1 = ThumbnailImage();
-    // const img2 = ThumbnailImage();
-    // const img3 = ThumbnailImage();
-    // imagePreview.append(img1,img2,img3);
+    let key = 1; // Doesn't pass it as a 0 for some reason
     imgs.forEach(element => {
-        console.log("current : ",element)
-        imagePreview.append(ThumbnailImage(element.src,element.active))
+        imagePreview.append(ThumbnailImage(element.src,element.active,key));
+        key ++;
     });
     return imagePreview;
 }

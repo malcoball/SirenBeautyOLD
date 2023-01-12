@@ -12,7 +12,7 @@ body {
   }
 }
 #navOutter {
-  z-index: 2;
+  z-index: 4;
   position: fixed;
   top: 0;
   width: 100vw;
@@ -24,7 +24,7 @@ body {
   max-width: 940px;
 }
 #navOutter nav .active {
-  color: rgb(78, 67, 67) !important;
+  color: #4e4343 !important;
 }
 #navOutter nav .linksCont {
   padding-left: 96px;
@@ -143,16 +143,25 @@ body {
   justify-content: center;
   width: 100%;
 }
-#EmailFormCont form button {
+#EmailFormCont form #btnDivInner {
+  background-color: white;
+  color: #4e4343;
   border-radius: 4px;
   margin: 12px;
-  padding: 6px 12px;
+  padding: 9px 12px;
   text-align: center;
   border: none;
   font-style: italic;
   transition: 0.3s;
+  cursor: pointer;
 }
-#EmailFormCont form button:hover {
+#EmailFormCont form #btnDivInner h5 {
+  font-size: 1em;
+  margin-bottom: 0;
+}
+#EmailFormCont form #btnDivInner:hover {
+  background-color: rgba(19, 19, 19, 0.5);
+  color: white;
   transform: scale(1.05);
   box-shadow: 0px 0px 2px rgb(255, 255, 255);
 }
@@ -174,7 +183,7 @@ body {
 }
 #EmailFormCont form button, #EmailFormCont .col1 button {
   background-color: white;
-  color: rgb(78, 67, 67);
+  color: #4e4343;
 }
 #EmailFormCont form button:hover, #EmailFormCont .col1 button:hover {
   box-shadow: 0px 0px 2px rgb(255, 255, 255);
@@ -186,15 +195,15 @@ body {
 }
 #EmailFormCont form .input, #EmailFormCont .col2 .input {
   background-color: rgba(255, 255, 255, 0);
-  color: rgb(78, 67, 67);
+  color: #4e4343;
   border-color: rgba(255, 255, 255, 0);
-  border-bottom-color: rgb(78, 67, 67);
+  border-bottom-color: #4e4343;
 }
 #EmailFormCont form .input:hover, #EmailFormCont form input:focus, #EmailFormCont .col2 .input:hover, #EmailFormCont .col2 input:focus {
-  border-color: rgb(78, 67, 67);
+  border-color: #4e4343;
 }
 #EmailFormCont form button, #EmailFormCont .col2 button {
-  background-color: rgb(78, 67, 67);
+  background-color: #4e4343;
   color: white;
 }
 #EmailFormCont form button:hover, #EmailFormCont .col2 button:hover {
@@ -326,7 +335,9 @@ footer h5:nth-of-type(2) {
   }
 }
 .carouselCont {
-  width: 50vw;
+  max-width: 1136px;
+  min-width: 880px;
+  width: 75vw;
   margin: auto;
   padding: 48px 0;
   background-color: white;
@@ -335,7 +346,7 @@ footer h5:nth-of-type(2) {
   position: relative;
   display: inline-block;
   width: 100%;
-  aspect-ratio: 1.5;
+  aspect-ratio: 3;
 }
 .carouselCont .activeDiv .carouselImg .carouselImgInner {
   display: flex;
@@ -359,9 +370,11 @@ footer h5:nth-of-type(2) {
 .carouselCont .activeDiv .carouselImg .carouselImgInner .textDiv h4 {
   text-transform: capitalize;
   font-size: 2rem;
+  color: #4e4343;
 }
 .carouselCont .activeDiv .carouselImg .carouselImgInner .textDiv p {
   font-size: 1rem;
+  color: rgba(19, 19, 19, 0.5);
 }
 .carouselCont .activeDiv .left {
   position: absolute;
@@ -396,9 +409,8 @@ footer h5:nth-of-type(2) {
     opacity: 0;
   }
 }
-.carouselCont .activeDiv .swipeLeft {
-  z-index: 2;
-  transition: 4s;
+.carouselCont .activeDiv .swipeIn {
+  background-color: white;
 }
 .carouselCont .imagePreviewCont {
   margin-top: 36px;
@@ -412,9 +424,14 @@ footer h5:nth-of-type(2) {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  filter: grayscale(0.5);
+  cursor: pointer;
 }
 .carouselCont .imagePreviewCont .active {
-  border-color: rgb(0, 0, 0) !important;
+  transition: 0.5s;
+  filter: grayscale(0);
+  border-color: rgba(0, 0, 0, 0.5);
+  transform: scale(1.01);
 }
 .carouselCont button {
   display: none;
@@ -456,13 +473,13 @@ i {
 }
 
 .col1 {
-  background-color: rgb(78, 67, 67);
+  background-color: #4e4343;
   color: white;
 }
 
 .col2 {
   background-color: white;
-  color: rgb(78, 67, 67);
+  color: #4e4343;
 }
 
 .col3 {

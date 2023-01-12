@@ -16,7 +16,7 @@ body{
     
 }
 #navOutter{
-    z-index: 2;
+    z-index: 4;
     position:fixed;
     top: 0;
     width: 100vw;
@@ -161,16 +161,23 @@ body{
             justify-content: center;
             width: 100%;
         }
-        button{
+        #btnDivInner{
+            background-color: $col1; color: $col2;
             border-radius: 4px;
             margin: 12px;
-            padding:6px 12px;
+            padding:9px 12px;
             text-align: center;
             border: none;
             font-style: italic;
             transition: 0.3s;
+            cursor: pointer;
+            h5{
+                font-size: 1em;
+                margin-bottom: 0;
+            }
         }
-        button:hover{
+        #btnDivInner:hover{
+            background-color: $col3; color: $col1;
             transform: scale(1.05);
             box-shadow: 0px 0px 2px rgb(255, 255, 255);
         }
@@ -361,7 +368,8 @@ footer{
 
 // Image carousel
 .carouselCont{
-    width:50vw;
+    max-width: 1136px; min-width: 880px;
+    width:75vw;
     margin: auto;
     padding:48px 0;
     background-color: $col1;
@@ -370,7 +378,7 @@ footer{
         .carouselImg{
             position: relative;
             display:inline-block;
-            width: 100%; aspect-ratio: 1.5;
+            width: 100%; aspect-ratio: 3;
             // border:1px solid black;
             // background-color: #774e32;
             
@@ -394,9 +402,11 @@ footer{
                     h4{
                         text-transform: capitalize;
                         font-size:2rem;
+                        color:$col2;
                     }
                     p{
                         font-size:1rem;
+                        color:$col3;
                     }
                 }
             }
@@ -420,10 +430,8 @@ footer{
             from{opacity: 1;}
             to{opacity: 0;}
         }
-        .swipeLeft{
-            z-index: 2;
-            // left: 0 !important;
-            transition: 4s;
+        .swipeIn{
+            background-color: $col1;
         }
     }
     .imagePreviewCont{
@@ -437,9 +445,14 @@ footer{
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center center;
+            filter:grayscale(0.5);
+            cursor: pointer;
         }
         .active{
-            border-color: rgb(0, 0, 0) !important;
+            transition: 0.5s;
+            filter:grayscale(0);
+            border-color: rgba(0, 0, 0, 0.5) ;
+            transform: scale(1.01);
         }
         
     }

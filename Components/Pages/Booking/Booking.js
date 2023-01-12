@@ -12,7 +12,7 @@ export default function Booking(DOMTarget){
     const article = Article();
 
   
-    DOMTarget.append(section,midSpace,article);
+    DOMTarget.append(section,article);
 
       
   }

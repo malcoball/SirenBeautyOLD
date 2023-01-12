@@ -1,5 +1,6 @@
 .HomeApp section {
-  padding-bottom: 122px;
+  margin-bottom: 122px;
+  padding-bottom: 16px;
 }
 .HomeApp section h1 {
   text-transform: uppercase;
@@ -50,7 +51,7 @@
 }
 .HomeApp .formCont {
   height: 760px;
-  background-color: rgb(78, 67, 67);
+  background-color: #4e4343;
   display: flex;
   align-items: center;
   justify-content: center;

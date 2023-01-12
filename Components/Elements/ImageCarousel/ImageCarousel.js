@@ -2,9 +2,19 @@ import makeElm from "../../MakeElm.js";
 import ImageContainer from "./ImageContainer.js";
 import ImagePreview from "./ImagePreview.js";
 import { imgSrc } from "../Images.js";
+import images from "./ImageObjs.js"; // Where to go to add/change the images
 
 const FadeTime = 2000; // in ms, so 1000 = 1s
-const fadeDistance = 200; // Basically how far the swipe animation is
+let mouse = false; // If the mouse is hovering or not essentially, esstially.
+let play = true; // Used for the automatic scroll, turn off when don't wanna play it.
+let animType = 0; // 0 = swipe, 1 = fade, anything else throws error
+let swipeDirection = true; // true right <- left, false left -> right. Only applies for swipe ofcourse
+let fadeDistance = 200; // Basically how far the swipe animation is
+if (animType == 1) fadeDistance = 0;
+
+
+
+let pics = [0,1,2]; // Works as ids for the images, don't touch pls
 
 const getImageLeft = ()=>{
     const target = document.querySelectorAll('.carouselImg');
@@ -14,46 +24,45 @@ const positionImages = ()=>{
     const imgs = document.querySelectorAll('.carouselImg');
     // Put left,right behind the active img
     const left = getImageLeft(); const top = imgs[1].offsetTop;
-    imgs[0].style.left = fadeDistance-left+"px"; imgs[2].style.left = fadeDistance+left+"px";
+    imgs[0].style.left = left-fadeDistance+"px"; imgs[2].style.left = fadeDistance+left+"px";
     imgs[0].style.top = top+"px"; imgs[2].style.top = top+"px";
     imgs[0].style.width = imgs[1].clientWidth+"px";
     imgs[2].style.width = imgs[1].clientWidth+"px";
     imgs[0].classList.add('hide');
     imgs[2].classList.add('hide');
 
-    console.log("width : ",imgs[1].clientWidth)
 }
-const images = [];
-class Image{
-    constructor(title,src,desc){
-        this.title = title;
-        this.desc = desc;
-        this.src = src + '.jpg';
-        images.push(this);
-    }
-}
-new Image('picture0','cardImageMicro','Hope this looks good');
-new Image('picture1','cardImageMicroN','Not sure what to put really lulz');
-new Image('picture2','cardImageCombo',"This is a short description");
-new Image('picture3','cardImageOmbre','Now this one, oh boy. This is the longest description one may ever see for something isnt going to be used and also how can I put so much with saying so little? Now fitting this wont be the problem but making it all consistent may be a challenge');
-new Image('Globe yo','map','Just a picture of a globe really, nothing else to it.');
-new Image('The Big Sea','contactBack','I wonder if people would say the sea here is just grey.');
+const setZIndex = ()=>{
+    const imgs = document.querySelectorAll('.carouselImg');
+    imgs[1].style.zIndex = 2;
+    imgs[0].style.zIndex = 1;
+    imgs[2].style.zIndex = 1;
 
-let pics = [0,1,2];
+}
+
+
+const init = ()=>{
+    positionImages();
+    autoSwipe();
+    mouseDetect();
+    thumbnailClick();
+    // setZIndex();
+}
 const getInt = (active)=>{
     const length = images.length-1;
     if (active < 0) active = length;
     if (active > length) active = 0;
     return active;
 }
-const nextImage = (fwd = true,type = 'fade')=>{
+const nextImage = ()=>{
     positionImages();
     // Fade out, then run all of this
     const imgs = document.querySelectorAll('.carouselImg');
     imgs[1].style.animationDuration = FadeTime / 1000 + 's';
-    if (type == 'fade'){
+    // Fading in animation
+    if (animType == 1){
         imgs[1].classList.add('fadeOut');
-        if (fwd == true){
+        if (swipeDirection == true){
             imgs[0].classList.add('hide');
             imgs[2].classList.remove('hide');
         } else {
@@ -61,36 +70,36 @@ const nextImage = (fwd = true,type = 'fade')=>{
             imgs[0].classList.remove('hide');
         }
     } else {
-        if (fwd == true){
-            imgs[2].classList.remove('hide');
-            imgs[2].style.zIndex = '2';
-            imgs[2].style.transitionDuration = FadeTime / 1000 + 's';
-            imgs[2].style.left = getImageLeft()+'px';
-        }else {
-            imgs[0].classList.remove('hide');
-            imgs[0].style.zIndex = '2';
-            imgs[0].style.transitionDuration = FadeTime / 1000 + 's';
-            imgs[0].style.left = getImageLeft()+'px';
+    // Swiping in animation
+    let target = 0;
+        if (swipeDirection == true){
+            // Swipe left
+            target = 2;
         }
+        let imgTarget = imgs[target];
+        imgTarget.classList.add('swipeIn');
+        imgTarget.classList.remove('hide');
+        imgTarget.style.zIndex = '2';
+        imgTarget.style.transitionDuration = FadeTime / 1000 + 's';
+        imgTarget.style.left = getImageLeft()+'px';
     }
     setTimeout(()=>{
-        if (type == 'fade'){
+        if (animType == 1){
             imgs[1].classList.remove('fadeOut');
         } else{
-            if (fwd == true){
-                imgs[2].classList.add('hide');
-                imgs[2].style.transitionDuration = '0s';
-                imgs[2].style.zIndex = '-1';
-                imgs[2].style.left = getImageLeft() + fadeDistance + 'px';
-            } else {
-                imgs[0].classList.add('hide');
-                imgs[0].style.transitionDuration = '0s';
-                imgs[0].style.zIndex = '-1';
-                imgs[0].style.left = getImageLeft() + fadeDistance + 'px';
+            let target = 0;
+            if (swipeDirection == true){
+                target = 2;
             }
+            let imgTarget = imgs[target];
+            imgTarget.classList.remove('swipeIn');
+            imgTarget.classList.add('hide');
+            imgTarget.style.transitionDuration = '0s';
+            imgTarget.style.zIndex = '-1';
+            imgTarget.style.left = getImageLeft() + fadeDistance + 'px';
         }
         let dir;
-        fwd == true ? dir = 1 : dir = -1;
+        swipeDirection == true ? dir = 1 : dir = -1;
     
         let out = [];
         const targets = ['left','active','right'];
@@ -126,15 +135,39 @@ const changeThumbnail = (active)=>{
     document.querySelectorAll('.carouselThumbnail')[active].classList.add('active');
 }
 const autoSwipe = ()=>{
-    const swipe = true;
-    if (swipe == true){
+    if (play == true){
         setTimeout(()=>{
-            nextImage(true,'swipe');
+            if (mouse == false){
+                nextImage();
+            }
             autoSwipe();
         },5000);
     }
 }
-
+const thumbnailClick = ()=>{
+    // Get target
+    const DOMTarget = document.querySelectorAll('.imagePreviewCont .carouselThumbnail');
+    // See the trigger
+    DOMTarget.forEach(elm =>{
+        elm.addEventListener("click",(e)=>{
+            let key = parseInt(e.target.id);
+            pics = [getInt(key-3),getInt(key-2),getInt(key-1)];
+            changeImage('right',images[key-1]);
+            nextImage();
+            changeThumbnail(pics[2])
+        })
+    })
+}
+const mouseDetect = ()=>{
+    const DOMTarget = document.querySelector('.carouselCont');
+    console.log(DOMTarget);
+    DOMTarget.onmouseenter = ()=>{
+        mouse = true;
+    }
+    DOMTarget.onmouseleave = ()=>{
+        mouse = false;
+    }
+}
 
 const ImageCarousel = ()=>{
     // Create the HTML elements
@@ -155,15 +188,14 @@ const ImageCarousel = ()=>{
 
         // Where to add any interactive bits, gives the DOM chance to init
         setTimeout(()=>{
-            positionImages();
-            autoSwipe();
+            init();
             btn1.addEventListener("click",()=>{
                 nextImage(false,'swipe');
             })
             btn2.addEventListener("click",()=>{
                 nextImage(true,'swipe');
             })
-        },1000);
+        },10);
     return imageCarousel;
 }
 export default ImageCarousel;
