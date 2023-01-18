@@ -310,10 +310,11 @@ footer{
 }
 .contactDiv{
     height: 100%;
-    color: $col1;
+    color: $col2;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
+    background-color:#f8d4d4;
     .contactContainer{
         margin: auto;
         height:80%;
@@ -321,6 +322,7 @@ footer{
         flex-direction: column;
         justify-content: space-around;
         h3{
+            margin-left: 8px;
             flex-grow: 0.5;
             font-family: $font1;
             text-transform: uppercase;

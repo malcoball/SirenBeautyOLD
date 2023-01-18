@@ -9,8 +9,8 @@ const ImageContainer = (position,imageIn)=>{
                 const title = makeElm('h4','imgTitle','',imageIn.title);
                 const desc = makeElm('p','imgDesc','',imageIn.desc);
     imageContainer.append(innerContainer);
-      innerContainer.append(imgDiv,txtDiv);
-        txtDiv.append(title,desc);
+      innerContainer.append(imgDiv);
+        // txtDiv.append(title,desc);
     return imageContainer;
 }
 

@@ -74,6 +74,7 @@ function makePage(title,active){
 
   SavePage(title);
 
+  console.log("The page is : ",title);
   const classTargets = document.querySelectorAll('#'+active);
   classTargets.forEach(element => {
     if (element.classList !== null) element.classList.toggle("active");

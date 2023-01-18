@@ -24,10 +24,10 @@ export default function ContactInfo (mainTitleText = "Listen to me!!"){
         const inner = makeElm('div','contactContainer');
 
       const mainTitle = makeElm('h3',"","",mainTitleText);
-      const Phone = area('phoneArea',"Images/NavIcons/Phone.png",'Phone','123-456-67-89');
+      const Phone = area('phoneArea',"Images/NavIcons/Phone.png",'Phone - Text','07743124969');
       const Email = area('emailArea',"Images/NavIcons/Mail.png",'Email','sirenbeautynottingham@gmail.com');
-      const Address = area('addressArea',"Images/NavIcons/Map.png",'Address','28 Valorant Road');
+      const Address = area('addressArea',"Images/NavIcons/Map.png",'Address','10B Highstreet,<br> Hucknall,<br>Nottingham<br>NG15 7HD');
       out.append(inner);
-        inner.append(mainTitle,Phone,Email,Address);
+        inner.append(mainTitle,Email,Phone,Address);
     return out;
 }

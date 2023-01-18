@@ -1,5 +1,5 @@
 import makeElm from "../MakeElm.js";
-const emailTarget = 'adam_shaw1994@hotmail.co.uk';
+const emailTarget = 'sirenbeautynottingham@gmail.com';
 
 function requiredInput(target,check){
   target.addEventListener("blur",()=>{
