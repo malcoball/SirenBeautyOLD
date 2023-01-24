@@ -343,6 +343,8 @@ footer h5:nth-of-type(2) {
   margin: auto;
   padding: 48px 0;
   background-color: white;
+  background-position: center;
+  background-repeat: repeat;
 }
 .carouselCont .activeDiv .carouselImg {
   position: relative;
@@ -415,13 +417,13 @@ footer h5:nth-of-type(2) {
   background-color: white;
 }
 .carouselCont .imagePreviewCont {
-  margin-top: 36px;
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, 96px);
+  grid-gap: 32px;
 }
 .carouselCont .imagePreviewCont .carouselThumbnail {
   border: 1px solid rgba(136, 136, 136, 0.5);
-  width: 11%;
   aspect-ratio: 1;
   background-size: cover;
   background-repeat: no-repeat;

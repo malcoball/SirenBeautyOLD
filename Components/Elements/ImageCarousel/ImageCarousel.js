@@ -16,30 +16,6 @@ if (animType == 1) fadeDistance = 0;
 
 let pics = [0,1,2]; // Works as ids for the images, don't touch pls
 
-const getImageLeft = ()=>{
-    const target = document.querySelectorAll('.carouselImg');
-    return target[1].offsetLeft;
-}
-const positionImages = ()=>{
-    const imgs = document.querySelectorAll('.carouselImg');
-    // Put left,right behind the active img
-    const left = getImageLeft(); const top = imgs[1].offsetTop;
-    imgs[0].style.left = left-fadeDistance+"px"; imgs[2].style.left = fadeDistance+left+"px";
-    imgs[0].style.top = top+"px"; imgs[2].style.top = top+"px";
-    imgs[0].style.width = imgs[1].clientWidth+"px";
-    imgs[2].style.width = imgs[1].clientWidth+"px";
-    imgs[0].classList.add('hide');
-    imgs[2].classList.add('hide');
-
-}
-const setZIndex = ()=>{
-    const imgs = document.querySelectorAll('.carouselImg');
-    imgs[1].style.zIndex = 2;
-    imgs[0].style.zIndex = 1;
-    imgs[2].style.zIndex = 1;
-
-}
-
 
 const init = ()=>{
     positionImages();
@@ -54,79 +30,10 @@ const getInt = (active)=>{
     if (active > length) active = 0;
     return active;
 }
-const nextImage = ()=>{
-    positionImages();
-    // Fade out, then run all of this
-    const imgs = document.querySelectorAll('.carouselImg');
-    imgs[1].style.animationDuration = FadeTime / 1000 + 's';
-    // Fading in animation
-    if (animType == 1){
-        imgs[1].classList.add('fadeOut');
-        if (swipeDirection == true){
-            imgs[0].classList.add('hide');
-            imgs[2].classList.remove('hide');
-        } else {
-            imgs[2].classList.add('hide');
-            imgs[0].classList.remove('hide');
-        }
-    } else {
-    // Swiping in animation
-    let target = 0;
-        if (swipeDirection == true){
-            // Swipe left
-            target = 2;
-        }
-        let imgTarget = imgs[target];
-        imgTarget.classList.add('swipeIn');
-        imgTarget.classList.remove('hide');
-        imgTarget.style.zIndex = '2';
-        imgTarget.style.transitionDuration = FadeTime / 1000 + 's';
-        imgTarget.style.left = getImageLeft()+'px';
-    }
-    setTimeout(()=>{
-        if (animType == 1){
-            imgs[1].classList.remove('fadeOut');
-        } else{
-            let target = 0;
-            if (swipeDirection == true){
-                target = 2;
-            }
-            let imgTarget = imgs[target];
-            imgTarget.classList.remove('swipeIn');
-            imgTarget.classList.add('hide');
-            imgTarget.style.transitionDuration = '0s';
-            imgTarget.style.zIndex = '-1';
-            imgTarget.style.left = getImageLeft() + fadeDistance + 'px';
-        }
-        let dir;
-        swipeDirection == true ? dir = 1 : dir = -1;
-    
-        let out = [];
-        const targets = ['left','active','right'];
-    
-        for (let i = 0; i < 3; i++){
-            out.push(getInt(pics[i]+dir));
-        }
-        pics = out;
-        for (let i = 0; i < 3; i++){
-            let int = pics[i];
-            changeImage(targets[i],images[int]);
-        }
-
-        // Change the active preview box
-        changeThumbnail(pics[1]);
-    },FadeTime- (FadeTime/20));
-
-}
-const changeImage = (target,imgObj)=>{
-    const imgTarget = document.querySelector(`.imageContainer .${target} .carouselImgInner .imgDiv`);
-    const titleTarget = document.querySelector(`.imageContainer .${target} .carouselImgInner .imgTitle`);
-    const descTarget = document.querySelector(`.imageContainer .${target} .carouselImgInner .imgDesc`);
+const changeImage = (imgObj)=>{
+    const imgTarget = document.querySelector(`.carouselCont`);
 
     imgTarget.style.backgroundImage     = `url(${imgSrc(imgObj.src)})`;
-    titleTarget.innerHTML   = imgObj.title;
-    descTarget.innerHTML    = imgObj.desc;
-
 }
 const changeThumbnail = (active)=>{
     // Just a change of classes
@@ -172,29 +79,26 @@ const mouseDetect = ()=>{
 const ImageCarousel = ()=>{
     // Create the HTML elements
     const imageCarousel = makeElm('div','carouselCont');
+        imageCarousel.style.backgroundColor = "red";
+
+        // imageCarousel.style.backgroundImage = images[pics[1]].src;
         const activeDiv     = makeElm('div','activeDiv');
           const imgCont     = makeElm('div','imageContainer');
-          const leftImage = ImageContainer('left',images[pics[0]]);
-          const activeImage = ImageContainer('active',images[pics[1]]);
-          const rightImage = ImageContainer('right',images[pics[2]]);
         const previewDiv = ImagePreview(images , pics[1]);
-        const btn1 = makeElm('button','btnLeft','','back');
-        const btn2 = makeElm('button','btnRight','','fwd');
-        imageCarousel.append(activeDiv,previewDiv,btn1,btn2);
+        imageCarousel.append(previewDiv);
             activeDiv.append(imgCont);
-                imgCont.append(leftImage,activeImage,rightImage);
 
 
 
         // Where to add any interactive bits, gives the DOM chance to init
         setTimeout(()=>{
             init();
-            btn1.addEventListener("click",()=>{
-                nextImage(false,'swipe');
-            })
-            btn2.addEventListener("click",()=>{
-                nextImage(true,'swipe');
-            })
+            // btn1.addEventListener("click",()=>{
+            //     nextImage(false,'swipe');
+            // })
+            // btn2.addEventListener("click",()=>{
+            //     nextImage(true,'swipe');
+            // })
         },10);
     return imageCarousel;
 }

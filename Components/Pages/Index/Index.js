@@ -15,7 +15,7 @@ export default function Index(DOMTarget){
     // Form area
     const formCont = FormCont();
   
-    DOMTarget.append(topSpace,section,midSpace,imageCarousel,botSpace,formCont);
+    DOMTarget.append(topSpace,section,imageCarousel,formCont);
 
         const mapTarget = document.querySelector('#map');
         Map(mapTarget);
