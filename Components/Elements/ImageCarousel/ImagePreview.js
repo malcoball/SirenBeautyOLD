@@ -4,7 +4,6 @@ import ThumbnailImage from "./ThumbnailImage.js";
 const ImagePreview = (imgSrcs = [],active = 0)=>{
     // Display all the images for the carousel
     const imagePreview = makeElm('div','imagePreviewCont');
-    // This is where the
     const imgs = [];
 
     for (let i = 0; i < imgSrcs.length; i++){
