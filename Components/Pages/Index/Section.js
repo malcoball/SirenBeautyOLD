@@ -4,8 +4,8 @@ const Section = ()=>{
     const section = makeElm('section',"text-primary col1 home");
     const secDiv = makeElm('div',"innerDiv col1");
       const header1 = makeElm('h1',"","",'Welcome to Siren Beauty Nottingham');
-      const header2 = makeElm('h5',"","",'<i>Enabling you to feel your best self</i>');
-      const header3 = makeElm('h5',"","",'Siren Beauty Nottingham is a sole team and idea of one. Emma specialises in semi permanent make up and prides herself on really listening to what the client wants. Her ideas of beauty are as unique as the people sat in her company')
+      const header2 = makeElm('h5',"","",'<i>When art and science combine to create the beauty of permanent make up….</i>');
+      const header3 = makeElm('h5',"","",'Welcome to Siren Beauty, home of your permanent make up artist. Established in 2020 Siren Beauty was set up by Emma to help people fall in love with cosmetic tattoo treatments as she did. Having a passion for giving her clients the best, Emma has trained with multiple talented artists whilst carefully researching and choosing the best methods and products to date. Not only considering how the treatment looks new, but how it will heal and age over time.')
     section.append(secDiv);
         secDiv.append(header1,header2,header3);
 
